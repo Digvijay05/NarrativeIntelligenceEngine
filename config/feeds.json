@@ -1,0 +1,458 @@
+{
+    "version": "1.0.0",
+    "generated_at": "2026-01-25T23:28:00+05:30",
+    "description": "Curated RSS feed catalog for Indian public discourse narrative intelligence",
+    "poll_config": {
+        "news": {
+            "interval_minutes": 10,
+            "retry_after_minutes": 30
+        },
+        "policy": {
+            "interval_minutes": 60,
+            "retry_after_minutes": 120
+        },
+        "regional": {
+            "interval_minutes": 15,
+            "retry_after_minutes": 45
+        },
+        "business": {
+            "interval_minutes": 10,
+            "retry_after_minutes": 30
+        },
+        "investigative": {
+            "interval_minutes": 30,
+            "retry_after_minutes": 60
+        },
+        "global": {
+            "interval_minutes": 15,
+            "retry_after_minutes": 45
+        },
+        "specialized": {
+            "interval_minutes": 120,
+            "retry_after_minutes": 240
+        }
+    },
+    "feeds": {
+        "national_news": {
+            "description": "High-volume discourse baseline - carrier waves showing where attention concentrates",
+            "tier": 1,
+            "poll_type": "news",
+            "sources": [
+                {
+                    "id": "thehindu_all",
+                    "name": "The Hindu (All News)",
+                    "url": "https://www.thehindu.com/feeder/default.rss",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "indianexpress_main",
+                    "name": "Indian Express",
+                    "url": "https://indianexpress.com/feed/",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "toi_top",
+                    "name": "Times of India",
+                    "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "ht_india",
+                    "name": "Hindustan Times",
+                    "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "ndtv_india",
+                    "name": "NDTV India",
+                    "url": "https://feeds.feedburner.com/ndtvnews-india-news",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "news18_india",
+                    "name": "News18 India",
+                    "url": "https://www.news18.com/rss/india.xml",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "scroll_latest",
+                    "name": "Scroll.in",
+                    "url": "https://scroll.in/feeds/latest.rss",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "thewire_main",
+                    "name": "The Wire",
+                    "url": "https://thewire.in/feed",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "deccanherald_main",
+                    "name": "Deccan Herald",
+                    "url": "https://www.deccanherald.com/rss",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                }
+            ]
+        },
+        "government_policy": {
+            "description": "Low-noise, high-impact signals for detecting silent policy progression",
+            "tier": 1,
+            "poll_type": "policy",
+            "sources": [
+                {
+                    "id": "pib_main",
+                    "name": "PIB (Press Information Bureau)",
+                    "url": "https://pib.gov.in/rss.aspx",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "government",
+                    "enabled": true
+                },
+                {
+                    "id": "prs_latest",
+                    "name": "PRS Legislative Research",
+                    "url": "https://prsindia.org/feeds/latest",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "policy_research",
+                    "enabled": true,
+                    "notes": "May require validation"
+                },
+                {
+                    "id": "indiacode_updates",
+                    "name": "India Code (Gazette/Acts)",
+                    "url": "https://www.indiacode.nic.in/feeds/updates",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "government",
+                    "enabled": true,
+                    "notes": "Feed endpoint may break - mark adapter as TODO if fails"
+                },
+                {
+                    "id": "mygov_blog",
+                    "name": "MyGov Updates",
+                    "url": "https://blog.mygov.in/feed/",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "government",
+                    "enabled": true
+                },
+                {
+                    "id": "rbi_press",
+                    "name": "RBI Press Releases",
+                    "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=feed",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "regulatory",
+                    "enabled": true,
+                    "notes": "Non-standard feed format possible"
+                },
+                {
+                    "id": "sebi_updates",
+                    "name": "SEBI Updates",
+                    "url": "https://www.sebi.gov.in/sebirss.xml",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "regulatory",
+                    "enabled": true
+                },
+                {
+                    "id": "meity_press",
+                    "name": "MeitY Press",
+                    "url": "https://www.meity.gov.in/rss.xml",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "government",
+                    "enabled": true
+                },
+                {
+                    "id": "niti_aayog",
+                    "name": "NITI Aayog",
+                    "url": "https://www.niti.gov.in/rss.xml",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "policy_research",
+                    "enabled": true
+                }
+            ]
+        },
+        "business_economy": {
+            "description": "Policy-economy coupling - regulatory and macroeconomic shifts",
+            "tier": 2,
+            "poll_type": "business",
+            "sources": [
+                {
+                    "id": "et_default",
+                    "name": "Economic Times",
+                    "url": "https://economictimes.indiatimes.com/rssfeedsdefault.cms",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "bstandard_top",
+                    "name": "Business Standard",
+                    "url": "https://www.business-standard.com/rss/home_page_top_stories.rss",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "moneycontrol_business",
+                    "name": "Moneycontrol",
+                    "url": "https://www.moneycontrol.com/rss/business.xml",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "livemint_news",
+                    "name": "Livemint",
+                    "url": "https://www.livemint.com/rss/news",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                },
+                {
+                    "id": "bqprime_main",
+                    "name": "Bloomberg Quint",
+                    "url": "https://www.bqprime.com/rss",
+                    "language": "en",
+                    "region": "national",
+                    "enabled": true
+                }
+            ]
+        },
+        "regional": {
+            "description": "State-level coverage for detecting under-reporting and local anomalies",
+            "tier": 2,
+            "poll_type": "regional",
+            "sources": [
+                {
+                    "id": "thehindu_tn",
+                    "name": "The Hindu Tamil Nadu",
+                    "url": "https://www.thehindu.com/news/national/tamil-nadu/feeder/default.rss",
+                    "language": "en",
+                    "region": "tamil_nadu",
+                    "enabled": true
+                },
+                {
+                    "id": "ie_mumbai",
+                    "name": "Indian Express Mumbai",
+                    "url": "https://indianexpress.com/section/cities/mumbai/feed/",
+                    "language": "en",
+                    "region": "maharashtra",
+                    "enabled": true
+                },
+                {
+                    "id": "ie_delhi",
+                    "name": "Indian Express Delhi",
+                    "url": "https://indianexpress.com/section/cities/delhi/feed/",
+                    "language": "en",
+                    "region": "delhi",
+                    "enabled": true
+                },
+                {
+                    "id": "dh_karnataka",
+                    "name": "Deccan Herald Karnataka",
+                    "url": "https://www.deccanherald.com/rss/karnataka",
+                    "language": "en",
+                    "region": "karnataka",
+                    "enabled": true
+                },
+                {
+                    "id": "telangana_today",
+                    "name": "Telangana Today",
+                    "url": "https://telanganatoday.com/feed",
+                    "language": "en",
+                    "region": "telangana",
+                    "enabled": true
+                },
+                {
+                    "id": "greater_kashmir",
+                    "name": "Greater Kashmir",
+                    "url": "https://www.greaterkashmir.com/feed",
+                    "language": "en",
+                    "region": "jammu_kashmir",
+                    "enabled": true
+                },
+                {
+                    "id": "nenow_main",
+                    "name": "North East Now",
+                    "url": "https://nenow.in/feed",
+                    "language": "en",
+                    "region": "northeast",
+                    "enabled": true
+                }
+            ]
+        },
+        "investigative_factcheck": {
+            "description": "Contradiction signals - useful for explicit contradiction tagging",
+            "tier": 2,
+            "poll_type": "investigative",
+            "sources": [
+                {
+                    "id": "altnews_main",
+                    "name": "Alt News",
+                    "url": "https://www.altnews.in/feed/",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "factcheck",
+                    "enabled": true
+                },
+                {
+                    "id": "boomlive_main",
+                    "name": "Boom Live",
+                    "url": "https://www.boomlive.in/rss",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "factcheck",
+                    "enabled": true
+                },
+                {
+                    "id": "factly_main",
+                    "name": "Factly",
+                    "url": "https://factly.in/feed/",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "factcheck",
+                    "enabled": true
+                },
+                {
+                    "id": "article14_main",
+                    "name": "Article14",
+                    "url": "https://article-14.com/feed",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "investigative",
+                    "enabled": true
+                }
+            ]
+        },
+        "global_context": {
+            "description": "External shocks affecting India - global event coverage",
+            "tier": 2,
+            "poll_type": "global",
+            "sources": [
+                {
+                    "id": "reuters_world",
+                    "name": "Reuters World",
+                    "url": "https://feeds.reuters.com/reuters/worldNews",
+                    "language": "en",
+                    "region": "global",
+                    "enabled": true
+                },
+                {
+                    "id": "reuters_india",
+                    "name": "Reuters India",
+                    "url": "https://feeds.reuters.com/reuters/INtopNews",
+                    "language": "en",
+                    "region": "india",
+                    "enabled": true
+                },
+                {
+                    "id": "bbc_world",
+                    "name": "BBC World",
+                    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+                    "language": "en",
+                    "region": "global",
+                    "enabled": true
+                },
+                {
+                    "id": "aljazeera_all",
+                    "name": "Al Jazeera",
+                    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+                    "language": "en",
+                    "region": "global",
+                    "enabled": true
+                },
+                {
+                    "id": "ap_news",
+                    "name": "AP News",
+                    "url": "https://apnews.com/rss",
+                    "language": "en",
+                    "region": "global",
+                    "enabled": true
+                }
+            ]
+        },
+        "specialized_longform": {
+            "description": "Slower structural narratives - not daily noise",
+            "tier": 3,
+            "poll_type": "specialized",
+            "sources": [
+                {
+                    "id": "epw_main",
+                    "name": "EPW (Economic & Political Weekly)",
+                    "url": "https://www.epw.in/rss.xml",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "academic",
+                    "enabled": true
+                },
+                {
+                    "id": "orf_main",
+                    "name": "ORF (Observer Research Foundation)",
+                    "url": "https://www.orfonline.org/feed",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "think_tank",
+                    "enabled": true
+                },
+                {
+                    "id": "cpr_india",
+                    "name": "CPR India",
+                    "url": "https://www.cprindia.org/feed",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "policy_research",
+                    "enabled": true
+                },
+                {
+                    "id": "dte_main",
+                    "name": "Down To Earth",
+                    "url": "https://www.downtoearth.org.in/rss",
+                    "language": "en",
+                    "region": "national",
+                    "source_type": "environment_policy",
+                    "enabled": true
+                }
+            ]
+        }
+    },
+    "statistics": {
+        "total_feeds": 47,
+        "by_tier": {
+            "tier_1": 17,
+            "tier_2": 23,
+            "tier_3": 4
+        },
+        "by_category": {
+            "national_news": 9,
+            "government_policy": 8,
+            "business_economy": 5,
+            "regional": 7,
+            "investigative_factcheck": 4,
+            "global_context": 5,
+            "specialized_longform": 4
+        }
+    }
+}

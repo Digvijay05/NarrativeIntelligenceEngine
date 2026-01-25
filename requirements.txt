@@ -1,0 +1,12 @@
+# Narrative Intelligence Engine Prototype
+# Requirements file
+
+# No external dependencies required for this prototype
+# Uses only Python standard library modules:
+# - json
+# - csv
+# - datetime
+# - typing
+# - dataclasses
+# - hashlib
+# - uuid
