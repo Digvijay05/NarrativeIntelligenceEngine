@@ -21,21 +21,17 @@ from typing import List, Tuple, Optional
 from datetime import datetime
 import uuid
 
-from frontend.dtos import (
+from frontend.state import (
     DTOVersion, AvailabilityState, ContinuityState, LifecycleState,
     SilenceType, DivergenceFlag, OrderingBasis,
     NarrativeThreadDTO, TimelineSegmentDTO, EvidenceFragmentDTO,
     ModelOverlayRefDTO,
-)
-from frontend.dtos.thread import (
-    TemporalBoundsDTO, PresenceMarkerDTO, OverlayRefDTO
-)
-from frontend.dtos.segment import TimeWindowDTO, SilenceIndicatorDTO
-from frontend.dtos.fragment import TimestampDTO
-from frontend.dtos.overlay import ScoreRefDTO, AnnotationRefDTO
-from frontend.dtos.envelope import (
-    QueryMetadataDTO, ThreadListEnvelope, SegmentListEnvelope,
-    FragmentListEnvelope, PaginationDTO
+    TemporalBoundsDTO, PresenceMarkerDTO, OverlayRefDTO,
+    TimeWindowDTO, SilenceIndicatorDTO,
+    TimestampDTO,
+    ScoreRefDTO, AnnotationRefDTO,
+    ThreadListEnvelope, SegmentListEnvelope, FragmentListEnvelope,
+    QueryMetadataDTO, PaginationDTO
 )
 
 

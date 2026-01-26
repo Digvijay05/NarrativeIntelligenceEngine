@@ -103,6 +103,8 @@ class ModelErrorCode(Enum):
     INTERNAL_ERROR = "internal_error"
     INVALID_INPUT = "invalid_input"
     REPLAY_FAILED = "replay_failed"
+    RATE_LIMITED = "rate_limited"  # Provider rate limited
+    INVALID_OUTPUT = "invalid_output"  # Response couldn't be parsed
 
 
 @dataclass(frozen=True)

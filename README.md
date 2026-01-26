@@ -1,84 +1,106 @@
-# Narrative Intelligence Engine Prototype
+# Narrative Intelligence Engine
 
-This is a prototype implementation of the Narrative Intelligence Engine, designed to reconstruct coherent narratives from fragmented public information.
+**A Forensic Instrument for Narrative Analysis**
+
+> *Reconstruct coherent narratives from fragmented public information without inferring truth or resolving ambiguity.*
 
 ## Overview
 
-The Narrative Intelligence Engine helps users:
-- Reconstruct coherent narratives from fragmented public information
-- Surface progression, stalling, or disappearance of narratives over time
-- Understand complex, multi-actor situations with reduced cognitive effort
-- Make informed decisions grounded in context rather than isolated facts
+The Narrative Intelligence Engine is an event-sourced system designed to ingest, normalize, and visualize conflicting narratives as they evolve over time. Unlike news aggregators or sentiment dashboards, it treats narrative evolution as a **temporal signals processing problem**.
 
-See `../Docs/PRD.txt` for the complete problem statement and requirements.
+**Key Principles:**
+*   **No Interpretation**: The system does not rank "importance" or predict "truth".
+*   **Forensic Rigor**: Every visualized state is traceable to a raw, immutable evidence fragment.
+*   **First-Class Absence**: Silence, gaps, and disappearance are treated as signals, not missing data.
+*   **Contradiction**: Parallel, mutually exclusive narratives are visualized side-by-side.
 
-## Components
+---
 
-### Data Ingestion (`ingestion.py`)
-Handles loading and preprocessing of raw data from various sources:
-- JSON files with timestamped fragments
-- CSV files with timestamped fragments
-- Basic preprocessing and validation
+## 🏗 System Architecture
 
-### Core Models (`models.py`)
-Defines the fundamental data structures:
-- `Fragment`: A single piece of information at a specific time
-- `Thread`: A collection of related narrative fragments over time
-- `NarrativeStateEngine`: Processes fragments and groups them into threads
+The system operates on a strict 6-layer Backend and 4-layer Frontend architecture.
 
-### Visualization (`visualization.py`)
-Provides text-based visualization of narrative threads:
-- Timeline view showing narrative progression
-- Comparison view showing parallel narratives
-- Export functionality to JSON for external analysis
+### Backend (Python)
+An event-sourced engine that processes raw feeds into narrative threads.
 
-### Main Application (`main.py`)
-Coordinates the components and runs the prototype.
+1.  **Ingestion Layer**: Fetches data (RSS/Atom) and stores *raw bytes* before parsing.
+2.  **Normalization Layer**: Extracts entities into standard `EvidenceFragment` format.
+3.  **Core Engine**: A deterministic state machine that evolves `NarrativeThread` entities.
+4.  **Storage Layer**: Temporal storage preserving all history.
+5.  **Adapter Layer**: Interfaces with ML models for "Divergence Scoring" (Overlay pattern).
+6.  **Contract Layer**: Defines immutable DTOs for the frontend.
 
-## Requirements
+### Frontend (React + Vite + Tailwind)
+A "Narrative Oscilloscope" web interface.
 
-- Python 3.7+
-- No external dependencies (uses only Python standard library)
+1.  **State Layer**: Read-only access to backend DTOs.
+2.  **Visualization Layer**: Pure, deterministic D3.js layouts (Same Input → Same Pixels).
+3.  **Interaction Layer**: Temporal control (Zustand) for scrubbing and replay.
+4.  **Presentation Layer**: Stateless, "Forensic Palette" UI components.
 
-## Usage
+---
 
-Run the prototype:
+## 🚀 Getting Started
+
+### Prerequisites
+*   **Python 3.11+**
+*   **Node.js 18+** & `npm`
+
+### 1. Backend Setup
+The backend runs the ingestion and analysis pipeline.
+
 ```bash
-cd src
-python main.py
+# Data ingestion & Processing Demo
+python end_to_end_demo.py
+```
+*This script runs a full cycle: Mock RSS fetch → Ingestion → Thread Creation → Analysis → DTO Generation.*
+
+### 2. Frontend Setup
+The frontend provides the interactive visualization.
+
+```bash
+cd et_hackathon_project/frontend/client
+npm install
+npm run dev
+```
+Access the UI at `http://localhost:5173`.
+
+---
+
+## 🧪 Verification & Status
+
+The system is currently in **Functional Prototype** status.
+
+*   **Chaos Tests**: `43/43 PASSED`. The engine is resilient against out-of-order events, future timestamps, and adversarial flooding.
+*   **Integration**: End-to-end pipeline verified from RSS to DTO.
+*   **UI Status**: Visualization layer implements strict deterministic timeline rendering.
+
+### Capabilities (Current)
+*   ✅ Ingest RSS feeds (tiered source quality).
+*   ✅ Detect and track disjoint narrative threads.
+*   ✅ Identify contradictions (via Mock Adapter).
+*   ✅ Visualize silence and dormancy.
+
+---
+
+## 📂 Project Structure
+
+```
+├── backend/            # Core Python Engine
+├── frontend/
+│   ├── client/         # React Application
+<!-- │   ├── state/          # Python DTO Contracts -->
+│   ├── visualization/  # Python Visualization Contracts
+│   └── interaction/    # Interaction Contracts
+├── ingestion/          # Data Fetching & Parsing
+├── models/             # Domain Entities
+└── tests/              # Verification & Chaos Suites
 ```
 
-The prototype will:
-1. Load sample data from `../../sample_narrative_data.json`
-2. Process fragments into narrative threads grouped by topic
-3. Display timeline and comparison views
-4. Export processed data to `../../narrative_output.json`
+---
 
-## Design Principles
+## Developer Notes
 
-This prototype adheres to the principles outlined in the design document:
-- Clarity over certainty: Shows traceable structure without definitive conclusions
-- Continuity over immediacy: Focuses on understanding evolution across time
-- Comparability over persuasion: Enables contrast without pushing interpretation
-- Absence as signal: Represents silence and disappearance as informational states
-
-## Limitations
-
-This is a prototype implementation with several intentional limitations:
-- No real-time processing
-- No predictive capabilities
-- Simplified topic grouping (by explicit topic field)
-- Text-based visualization only
-- No entity resolution
-- No sentiment analysis or judgment systems
-
-## Files
-
-- `src/ingestion.py` - Data loading and preprocessing
-- `src/models.py` - Core data structures and processing logic
-- `src/visualization.py` - Text-based visualization components
-- `src/main.py` - Main application entry point
-- `requirements.txt` - Dependency information
-- `../sample_narrative_data.json` - Sample input data
-- `../narrative_output.json` - Exported output data (created when running)
-- `../Docs/` - Documentation and requirements
+*   **Immutability**: Ensure all DTOs remain frozen.
+*   **Time Travel**: The frontend supports arbitrary historical replay.
+*   **Zero Inference**: Do not add summary features or "AI insight" bubbles. The user is the analyst; the machine is the lens.

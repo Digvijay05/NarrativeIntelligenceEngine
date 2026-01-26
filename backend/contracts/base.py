@@ -201,7 +201,7 @@ class Timestamp:
         return Timestamp(value=dt)
     
     def to_iso(self) -> str:
-        return self.value.isoformat()
+        return self.value.isoformat().replace('+00:00', 'Z')
 
 
 @dataclass(frozen=True)

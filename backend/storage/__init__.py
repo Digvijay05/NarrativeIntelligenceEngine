@@ -44,6 +44,7 @@ from ..contracts.base import (
     ThreadId, FragmentId, VersionId, Timestamp, TimeRange,
     Error, ErrorCode
 )
+from ..contracts.temporal import LogEntry
 from ..contracts.events import (
     NarrativeStateEvent, ThreadStateSnapshot, NormalizedFragment,
     RawIngestionEvent, VersionedSnapshot, Timeline, TimelinePoint,
@@ -69,6 +70,10 @@ class StorageBackend:
     
     def write_fragment(self, fragment: NormalizedFragment) -> StorageWriteResult:
         """Write a normalized fragment to storage (append-only)."""
+        raise NotImplementedError
+    
+    def write_log_entry(self, entry: LogEntry) -> StorageWriteResult:
+        """Write a log entry to storage (append-only)."""
         raise NotImplementedError
     
     def write_snapshot(self, snapshot: ThreadStateSnapshot) -> StorageWriteResult:
@@ -106,6 +111,10 @@ class StorageBackend:
     def get_checkpoint(self, checkpoint_id: str) -> Optional[ReplayCheckpoint]:
         """Retrieve a specific checkpoint."""
         raise NotImplementedError
+    
+    def get_all_fragments(self) -> List[NormalizedFragment]:
+        """Retrieve all stored fragments."""
+        raise NotImplementedError
 
 
 # =============================================================================
@@ -139,6 +148,19 @@ class InMemoryStorageBackend(StorageBackend):
         
         # Write sequence for ordering
         self._write_sequence: int = 0
+        
+        # Append-only log entry store
+        self._log_entries: List[LogEntry] = []
+    
+    def write_log_entry(self, entry: LogEntry) -> StorageWriteResult:
+        """Append log entry to storage."""
+        self._log_entries.append(entry)
+        self._write_sequence += 1
+        
+        return StorageWriteResult(
+            success=True,
+            write_timestamp=Timestamp.now()
+        )
     
     def write_event(self, event: NarrativeStateEvent) -> StorageWriteResult:
         """Append event to storage."""
@@ -283,6 +305,7 @@ class FileStorageBackend(StorageBackend):
         self._fragments_file = os.path.join(storage_dir, "fragments.jsonl")
         self._snapshots_file = os.path.join(storage_dir, "snapshots.jsonl")
         self._checkpoints_file = os.path.join(storage_dir, "checkpoints.jsonl")
+        self._log_entries_file = os.path.join(storage_dir, "log_entries.jsonl")
         
         # Ensure storage directory exists
         os.makedirs(storage_dir, exist_ok=True)
@@ -403,6 +426,33 @@ class FileStorageBackend(StorageBackend):
                 )
             )
     
+    def write_log_entry(self, entry: LogEntry) -> StorageWriteResult:
+        """Append log entry to storage file."""
+        try:
+            with open(self._log_entries_file, 'a') as f:
+                data = {
+                    'sequence': entry.sequence.value,
+                    'fragment_id': entry.fragment.fragment_id.value,
+                    'ingestion_timestamp': entry.ingestion_timestamp.to_iso(),
+                    'previous_hash': entry.previous_hash,
+                    'entry_hash': entry.entry_hash
+                }
+                f.write(json.dumps(data) + '\n')
+            
+            return StorageWriteResult(
+                success=True,
+                write_timestamp=Timestamp.now()
+            )
+        except Exception as e:
+            return StorageWriteResult(
+                success=False,
+                error=Error(
+                    code=ErrorCode.TIMELINE_CORRUPTION,
+                    message=f"Failed to write log entry: {str(e)}",
+                    timestamp=Timestamp.now().value
+                )
+            )
+    
     def get_snapshot(self, version_id: VersionId) -> Optional[ThreadStateSnapshot]:
         """Retrieve a specific snapshot version from file."""
         # Would need to deserialize from file - simplified for now
@@ -463,6 +513,44 @@ class FileStorageBackend(StorageBackend):
         """Retrieve a specific checkpoint."""
         # Would need full implementation
         return None
+        
+    def get_all_fragments(self) -> List[NormalizedFragment]:
+        """Retrieve all fragments from file."""
+        fragments = []
+        if not os.path.exists(self._fragments_file):
+            return []
+            
+        try:
+            from ..contracts.base import DuplicateInfo, ContradictionInfo, DuplicateStatus, ContradictionStatus, SourceMetadata
+            from ..contracts.base import CanonicalTopic
+            
+            with open(self._fragments_file, 'r') as f:
+                for line in f:
+                    if not line.strip(): continue
+                    data = json.loads(line)
+                    
+                    # reconstruct
+                    frag = NormalizedFragment(
+                        fragment_id=FragmentId(
+                            value=data['fragment_id']['value'],
+                            content_hash=data['fragment_id']['content_hash']
+                        ),
+                        source_event_id=data['source_event_id'],
+                        content_signature=None, # Not stored in simplified write
+                        normalized_payload=data['normalized_payload'],
+                        detected_language=data.get('detected_language'),
+                        canonical_topics=tuple(), # Not stored
+                        canonical_entities=tuple(), # Not stored
+                        duplicate_info=DuplicateInfo(DuplicateStatus.UNIQUE), # Default
+                        contradiction_info=ContradictionInfo(ContradictionStatus.NO_CONTRADICTION), # Default
+                        normalization_timestamp=Timestamp.from_iso(data['normalization_timestamp']),
+                        source_metadata=SourceMetadata("unknown", 1.0, Timestamp.now()) # Dummay
+                    )
+                    fragments.append(frag)
+        except Exception as e:
+            print(f"Error reading fragments: {e}")
+            
+        return fragments
 
 
 # =============================================================================
@@ -501,7 +589,7 @@ class TemporalStorageEngine:
             return FileStorageBackend(self._config.storage_dir)
         return InMemoryStorageBackend()
     
-    def store_event(self, event: NarrativeStateEvent) -> StorageWriteResult:
+    def write_event(self, event: NarrativeStateEvent) -> StorageWriteResult:
         """Store a narrative state event."""
         result = self._backend.write_event(event)
         
@@ -527,7 +615,7 @@ class TemporalStorageEngine:
         
         return result
     
-    def store_fragment(self, fragment: NormalizedFragment) -> StorageWriteResult:
+    def write_fragment(self, fragment: NormalizedFragment) -> StorageWriteResult:
         """Store a normalized fragment."""
         result = self._backend.write_fragment(fragment)
         
@@ -540,6 +628,36 @@ class TemporalStorageEngine:
         
         return result
     
+    def write_log_entry(self, entry: LogEntry) -> StorageWriteResult:
+        """Store a log entry (persistence of the hash chain)."""
+        result = self._backend.write_log_entry(entry)
+        
+        if result.success:
+            self._write_count += 1
+            # Log specific audit for chain extension
+            self._log_audit(
+                action="chain_extended",
+                entity_id=entry.entry_hash,
+                metadata=(
+                    ("sequence", str(entry.sequence.value)),
+                    ("prev_hash", entry.previous_hash)
+                )
+            )
+        
+        return result
+    
+        return result
+    
+    def write_snapshot(self, snapshot: ThreadStateSnapshot) -> StorageWriteResult:
+        """Store a thread snapshot."""
+        result = self._backend.write_snapshot(snapshot)
+        
+        if result.success:
+            self._write_count += 1
+            # Optional: Log audit if verbose, but might be noisy
+        
+        return result
+        
     def get_thread_at_time(
         self,
         thread_id: ThreadId,
@@ -703,6 +821,10 @@ class TemporalStorageEngine:
     def get_audit_log(self) -> List[AuditLogEntry]:
         """Return copy of audit log entries."""
         return list(self._audit_log)
+
+    def get_all_fragments(self) -> List[NormalizedFragment]:
+        """Retrieve all fragments via backend."""
+        return self._backend.get_all_fragments()
     
     @property
     def backend(self) -> StorageBackend:

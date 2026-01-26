@@ -220,6 +220,78 @@ class InMemoryAdapter(IngestionAdapter):
         )
 
 
+class RssFileAdapter(IngestionAdapter):
+    """Adapter for ingesting from RSS feeds (via Capsule Force)."""
+    
+    def __init__(self, storage_dir: str = "./data/capsules"):
+        from .rss_fetcher import RssFetcher
+        from .extractor import RssExtractor
+        self._fetcher = RssFetcher(storage_dir)
+        self._extractor = RssExtractor()
+        
+    @property
+    def source_type(self) -> str:
+        return "rss"
+    
+    def validate_source(self, source_id: SourceId) -> Result:
+        """Validate source against Immutable Registry."""
+        from .registry import get_source_by_id
+        try:
+            get_source_by_id(source_id.value)
+            return Result.success(True)
+        except ValueError:
+            return Result.failure(Error(
+                code=ErrorCode.INVALID_SOURCE_ID,
+                message=f"Source {source_id.value} not in immutable registry",
+                timestamp=Timestamp.now().value
+            ))
+            
+    def pull_events(self, source_id: SourceId, since: Optional[Timestamp] = None) -> Iterator[RawIngestionEvent]:
+        """
+        Fetch -> Persist -> Extract -> Yield.
+        """
+        from .registry import get_source_by_id
+        
+        # 1. Validate
+        try:
+            reg_source = get_source_by_id(source_id.value)
+        except ValueError:
+            return iter([])
+            
+        # 2. Fetch (Persist Raw XML)
+        capsule = self._fetcher.fetch_source(source_id.value, reg_source.url)
+        if not capsule:
+            return iter([])
+            
+        # 3. Extract (Deterministic)
+        items = self._extractor.extract_capsule(capsule.file_path)
+        
+        # 4. Yield Events
+        for item in items:
+            # Construct deterministic payload
+            # We use a simple dict serialization
+            payload = {
+                "title": item.title,
+                "link": item.link,
+                "summary": item.summary,
+                "published": item.published_str,
+                "guid": item.guid,
+                "capsule_id": capsule.capsule_id # Link back to raw XML
+            }
+            
+            raw_payload = json.dumps(payload)
+            
+            # Parse timestamp if possible, else None (System will use ingestion time)
+            event_ts = None
+            
+            yield RawIngestionEvent.create(
+                source_id=source_id,
+                raw_payload=raw_payload,
+                source_confidence=1.0, # Trusted source
+                event_timestamp=event_ts
+            )
+
+
 # =============================================================================
 # INGESTION ENGINE (Orchestrates adapters)
 # =============================================================================
@@ -255,6 +327,9 @@ class IngestionEngine:
         self.register_adapter(JsonFileAdapter())
         self.register_adapter(CsvFileAdapter())
         self.register_adapter(InMemoryAdapter())
+        # Registry-based RSS adapter
+        # We assume default storage dir for now, can be configured later
+        self.register_adapter(RssFileAdapter())
     
     def register_adapter(self, adapter: IngestionAdapter):
         """Register an ingestion adapter for a source type."""

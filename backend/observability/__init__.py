@@ -531,6 +531,33 @@ class ObservabilityEngine:
         collector = self._collectors.get(entry.layer)
         if collector:
             collector.collect(entry)
+
+    def log_audit(
+        self,
+        action: str,
+        entity_id: Optional[str] = None,
+        outcome: str = "success",
+        details: str = "",
+        layer: str = "engine"
+    ):
+        """Helper to log audit entry directly."""
+        entry_id = hashlib.sha256(
+            f"{layer}_{action}|{Timestamp.now().value.timestamp()}".encode()
+        ).hexdigest()[:16]
+        
+        entry = AuditLogEntry(
+            entry_id=f"audit_{entry_id}",
+            event_type=AuditEventType.SYSTEM,
+            timestamp=Timestamp.now(),
+            layer=layer,
+            action=action,
+            entity_id=entity_id,
+            metadata=(
+                ("outcome", outcome),
+                ("details", details)
+            )
+        )
+        self.collect_audit(entry)
     
     def collect_metric(
         self,
