@@ -20,6 +20,11 @@ wheels/
 .installed.cfg
 *.egg
 
+# Dependencies
+node_modules/
+.npm
+.yarn
+
 # Virtual environments
 venv/
 ENV/
