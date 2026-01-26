@@ -179,7 +179,8 @@ class StateMachine:
     def derive_state(
         self,
         log: ImmutableEventLog,
-        until_sequence: Optional[LogSequence] = None
+        until_sequence: Optional[LogSequence] = None,
+        reference_time: Optional[Timestamp] = None
     ) -> DerivedState:
         """
         Derive complete state from log up to given sequence.
@@ -210,7 +211,7 @@ class StateMachine:
         
         # Build final thread views
         threads = tuple(
-            builder.build(at_sequence=target_seq)
+            builder.build(at_sequence=target_seq, reference_time=reference_time)
             for builder in thread_builders.values()
         )
         
@@ -294,6 +295,37 @@ class StateMachine:
         thread_builders: Dict[str, '_ThreadBuilder']
     ) -> Optional[str]:
         """Find thread that matches this fragment."""
+        
+        # 1. EXPLICIT EDGE CHECK (Force Merge)
+        # If this fragment is explicitly related to a fragment in an existing thread, join it.
+        # This overrides topic/time similarity.
+        if fragment.candidate_relations:
+            for relation in fragment.candidate_relations:
+                # We are looking for the 'other' end of the edge
+                # The relation could be source->target or target->source
+                # Since we inject edges where 'source' is the previous/parent,
+                # and 'target' is this fragment (or vice versa), check both.
+                
+                target_id = relation.target_fragment_id.value
+                source_id = relation.source_fragment_id.value
+                
+                # If the other end is NOT us, it's the anchor
+                anchor_id = None
+                if target_id != fragment.fragment_id.value:
+                    anchor_id = target_id
+                elif source_id != fragment.fragment_id.value:
+                    anchor_id = source_id
+                
+                if anchor_id:
+                    # Find thread containing anchor
+                    for tid, builder in thread_builders.items():
+                        # O(N) scan per edge - acceptable for prototype
+                        # In prod, maintain fragment_id -> thread_id index
+                        for existing_frag_id in builder.fragments:
+                            if existing_frag_id.value == anchor_id:
+                                return tid
+
+        # 2. Implicit Similarity (Fall back to existing logic)
         best_match: Optional[str] = None
         best_score = 0.0
         
@@ -327,6 +359,19 @@ class StateMachine:
                 (fragment.normalization_timestamp.value - builder.last_activity.value).total_seconds()
             ) / 3600
             
+            # Check for vanished threshold prevention
+            # If gap > vanished threshold, thread is effectively TERMINATED.
+            # It should NOT match new fragments.
+            # Using same heuristic as build(): 5x dormancy
+            dormancy_seconds = self._dormancy_hours * 3600
+            vanished_seconds = dormancy_seconds * 5 
+            
+            gap_seconds = (fragment.normalization_timestamp.value - builder.last_activity.value).total_seconds()
+            
+            if gap_seconds > vanished_seconds:
+                # TERMINATED threads cannot accept new fragments.
+                return 0.0
+
             if hours_diff <= self._temporal_adjacency_hours:
                 temporal_score = 0.3 * (1 - hours_diff / self._temporal_adjacency_hours)
             else:
@@ -354,6 +399,20 @@ class StateMachine:
         if not builder.last_activity:
             return None
             
+        # 0. EXPLICIT EDGE EXEMPTION
+        # If explicitly connected, it's not a divergence (even if simultaneous)
+        if fragment.candidate_relations:
+            for relation in fragment.candidate_relations:
+                target_id = relation.target_fragment_id.value
+                source_id = relation.source_fragment_id.value
+                anchor_id = target_id if target_id != fragment.fragment_id.value else source_id
+                
+                # Check if anchor is in this thread
+                # This is an O(N) check, optimization: builder could have a set
+                for existing_id in builder.fragments:
+                    if existing_id.value == anchor_id:
+                        return None
+
         # Check against existing fragments in this builder (scan backwards)
         # In a real impl, we'd have a better index. here we just check the builder's tracked state.
         # But builder only explicitly stores IDs. We can't check content.
@@ -456,15 +515,33 @@ class _ThreadBuilder:
     def add_absence(self, absence: AbsenceMarker):
         self.absence_markers.append(absence)
     
-    def build(self, at_sequence: LogSequence) -> ThreadView:
+    def build(self, at_sequence: LogSequence, reference_time: Optional[Timestamp] = None) -> ThreadView:
         # Compute lifecycle state
+        ref_time = reference_time.value if reference_time else datetime.now(timezone.utc)
+        
         if len(self.fragments) < 3:
             lifecycle = ThreadLifecycleState.EMERGING
         else:
-            # Check for dormancy
+            # Check for dormancy and vanished
             if self.last_activity:
-                gap = (datetime.now(timezone.utc) - self.last_activity.value).total_seconds()
-                if gap > self.config._dormancy_hours * 3600:
+                gap = (ref_time - self.last_activity.value).total_seconds()
+                
+                # Vanished threshold (hardcoded 10 ticks = 5 mins approx for test, or purely config based)
+                # Config says 168 hours for Dormancy.
+                # Absence Spec says: Active -> Dormant (Tick+2), Dormant -> Unresolved (Tick+4), Unresolved -> Vanished (Tick+10).
+                # We need to respect the config passed in.
+                
+                # Assuming config._dormancy_hours corresponds to "Tick+2" roughly.
+                # We need a vanished threshold.
+                # Let's add _vanished_hours to config or derive it.
+                # using 2.5x dormancy as heuristic for vanished if not config.
+                
+                dormancy_seconds = self.config._dormancy_hours * 3600
+                vanished_seconds = dormancy_seconds * 5 # Heuristic: 5x dormancy
+                
+                if gap > vanished_seconds:
+                     lifecycle = ThreadLifecycleState.TERMINATED # Vanished
+                elif gap > dormancy_seconds:
                     lifecycle = ThreadLifecycleState.DORMANT
                 else:
                     lifecycle = ThreadLifecycleState.ACTIVE
@@ -485,8 +562,8 @@ class _ThreadBuilder:
             lifecycle_state=lifecycle,
             member_fragment_ids=tuple(self.fragments),
             canonical_topics=tuple(self.topics),
-            first_activity=self.first_activity or Timestamp.now(),
-            last_activity=self.last_activity or Timestamp.now(),
+            first_activity=self.first_activity or Timestamp(ref_time),
+            last_activity=self.last_activity or Timestamp(ref_time),
             absence_markers=tuple(self.absence_markers)
         )
         

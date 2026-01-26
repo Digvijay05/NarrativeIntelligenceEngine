@@ -26,7 +26,8 @@ from .base import (
     SourceId, FragmentId, ThreadId, VersionId,
     Timestamp, TimeRange, SourceMetadata, ContentSignature,
     ThreadLifecycleState, FragmentRelation, FragmentRelationType,
-    CanonicalTopic, CanonicalEntity, Error, ErrorCode, Result
+    CanonicalTopic, CanonicalEntity, Error, ErrorCode, Result,
+    SourceTier  # NEW: Source tier classification
 )
 
 
@@ -48,6 +49,10 @@ class RawIngestionEvent:
     - Topic classifications
     - Entity extractions
     - Any interpreted or derived data
+    
+    SHADOW MODE SUPPORT:
+    - source_tier: Classification (MOCK, PUBLIC_RSS) for filtering
+    - raw_payload_path: Path to verbatim raw bytes (for RSS: raw XML)
     """
     event_id: str
     source_metadata: SourceMetadata
@@ -56,13 +61,21 @@ class RawIngestionEvent:
     ingestion_timestamp: Timestamp
     batch_id: Optional[str] = None
     
+    # NEW: Source tier classification (default MOCK for backward compatibility)
+    source_tier: SourceTier = SourceTier.MOCK
+    
+    # NEW: Path to verbatim raw payload file (optional, for provenance)
+    raw_payload_path: Optional[str] = None
+    
     @staticmethod
     def create(
         source_id: SourceId,
         raw_payload: str,
         source_confidence: float = 1.0,
         event_timestamp: Optional[Timestamp] = None,
-        batch_id: Optional[str] = None
+        batch_id: Optional[str] = None,
+        source_tier: SourceTier = SourceTier.MOCK,
+        raw_payload_path: Optional[str] = None
     ) -> RawIngestionEvent:
         """Factory for deterministic event creation."""
         import hashlib
@@ -81,7 +94,9 @@ class RawIngestionEvent:
             raw_payload=raw_payload,
             raw_payload_hash=payload_hash,
             ingestion_timestamp=now,
-            batch_id=batch_id
+            batch_id=batch_id,
+            source_tier=source_tier,
+            raw_payload_path=raw_payload_path
         )
 
 
@@ -136,6 +151,66 @@ class ContradictionInfo:
 
 
 @dataclass(frozen=True)
+class EmbeddingVector:
+    """
+    Immutable embedding vector contract.
+    
+    ML FENCE POST:
+    ==============
+    This is a COORDINATE TRANSFORM, not semantic understanding.
+    The vector is geometry in embedding space, nothing more.
+    
+    ALLOWED USES:
+    - Distance computation (cosine, euclidean)
+    - Nearest neighbor search
+    - Clustering input
+    
+    FORBIDDEN USES:
+    - "Similarity > X means same meaning" (threshold is inference)
+    - Dimension interpretation (no "dimension 5 = politics")
+    - Averaging vectors to "summarize" (lossy, hides uncertainty)
+    """
+    values: Tuple[float, ...]
+    model_id: str  # Which model produced this (for reproducibility)
+    model_version: str
+    
+    @property
+    def dimension(self) -> int:
+        return len(self.values)
+    
+    def to_list(self) -> list:
+        """Convert to list for numpy/torch operations."""
+        return list(self.values)
+    
+    @staticmethod
+    def from_list(values: list, model_id: str, model_version: str) -> 'EmbeddingVector':
+        """Create from list of floats."""
+        return EmbeddingVector(
+            values=tuple(values),
+            model_id=model_id,
+            model_version=model_version
+        )
+
+
+@dataclass(frozen=True)
+class SimilarityScore:
+    """
+    Immutable similarity score - RAW VALUE, no threshold decision.
+    
+    ML FENCE POST:
+    ==============
+    This stores the computed similarity WITHOUT interpreting it.
+    The caller receives the number; the system does NOT decide
+    what the number "means".
+    """
+    value: float  # Raw cosine similarity (-1 to 1) or distance
+    metric: str   # "cosine", "euclidean", "jaccard", etc.
+    
+    # Explicitly track that this is a RAW score, not a decision
+    threshold_applied: bool = False
+    
+
+@dataclass(frozen=True)
 class NormalizedFragment:
     """
     IMMUTABLE output from normalization layer.
@@ -149,6 +224,10 @@ class NormalizedFragment:
     - Sentiment analysis
     - Causal inferences
     - Predictions about future events
+    
+    ML EXTENSION:
+    - embedding_vector: Coordinate transform (geometry only)
+    - embedding_similarity: Raw similarity to other fragments (no threshold)
     """
     fragment_id: FragmentId
     source_event_id: str  # Reference to original RawIngestionEvent
@@ -161,6 +240,15 @@ class NormalizedFragment:
     contradiction_info: ContradictionInfo
     normalization_timestamp: Timestamp
     source_metadata: SourceMetadata
+    
+    candidate_relations: Tuple[FragmentRelation, ...] = field(default_factory=tuple)  # Explicit relations (e.g. analyst supplied)
+    
+    # ML COORDINATE TRANSFORM (optional, computed if model available)
+    embedding_vector: Optional[EmbeddingVector] = None
+    
+    # Similarity to most similar prior fragment (raw score, no decision)
+    nearest_similarity: Optional[SimilarityScore] = None
+    nearest_fragment_id: Optional[FragmentId] = None
 
 
 @dataclass(frozen=True)
@@ -316,6 +404,9 @@ class QueryType(Enum):
     COMPARISON = "comparison"
     SEARCH = "search"
     REWIND = "rewind"
+    SIMILARITY = "similarity"
+    TOPOLOGY = "topology"
+    ALIGNMENT = "alignment"
 
 
 @dataclass(frozen=True)
@@ -332,6 +423,7 @@ class QueryRequest:
     thread_id: Optional[ThreadId] = None
     fragment_id: Optional[FragmentId] = None
     target_timestamp: Optional[Timestamp] = None
+    comparison_thread_id: Optional[ThreadId] = None  # NEW: For alignment/comparison
     max_results: int = 100
     offset: int = 0
 
