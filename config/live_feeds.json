@@ -1,0 +1,156 @@
+{
+    "demo": {
+        "description": "Live RSS Demo - Forensic Execution Trace (India Focus)",
+        "inject_logical_clock": true,
+        "tick_interval_seconds": 30,
+        "region": "IN",
+        "max_items_per_feed": 10,
+        "default_tick_count": 3
+    },
+    "feeds": {
+        "general": {
+            "tier": 1,
+            "sources": [
+                {
+                    "id": "thewire",
+                    "url": "https://thewire.in/feed/",
+                    "category": "general",
+                    "name": "The Wire",
+                    "enabled": true
+                },
+                {
+                    "id": "thehindu_national",
+                    "url": "https://www.thehindu.com/news/national/?service=rss",
+                    "category": "general",
+                    "name": "The Hindu National",
+                    "enabled": true
+                },
+                {
+                    "id": "indianexpress_india",
+                    "url": "https://indianexpress.com/section/india/feed/",
+                    "category": "general",
+                    "name": "Indian Express India",
+                    "enabled": true
+                },
+                {
+                    "id": "bbc_india",
+                    "url": "https://feeds.bbci.co.uk/news/world/asia/india/rss.xml",
+                    "category": "general",
+                    "name": "BBC India",
+                    "enabled": true
+                }
+            ]
+        },
+        "politics": {
+            "tier": 1,
+            "sources": [
+                {
+                    "id": "firstpost_politics",
+                    "url": "https://www.firstpost.com/politics/feed",
+                    "category": "politics",
+                    "name": "Firstpost Politics",
+                    "enabled": true
+                },
+                {
+                    "id": "indianexpress_politics",
+                    "url": "https://indianexpress.com/section/india/politics/feed/",
+                    "category": "politics",
+                    "name": "Indian Express Politics",
+                    "enabled": true
+                },
+                {
+                    "id": "livemint_politics",
+                    "url": "https://www.livemint.com/rss/economy_politics",
+                    "category": "politics",
+                    "name": "Livemint Economy & Politics",
+                    "enabled": true
+                }
+            ]
+        },
+        "business": {
+            "tier": 1,
+            "sources": [
+                {
+                    "id": "economictimes",
+                    "url": "https://economictimes.indiatimes.com/rssfeedsdefault.cms",
+                    "category": "business",
+                    "name": "Economic Times",
+                    "enabled": true
+                },
+                {
+                    "id": "reuters_india_business",
+                    "url": "https://feeds.reuters.com/reuters/INbusinessNews",
+                    "category": "business",
+                    "name": "Reuters India Business",
+                    "enabled": true
+                },
+                {
+                    "id": "businessstandard",
+                    "url": "https://www.business-standard.com/rss/home_page_top_stories.rss",
+                    "category": "business",
+                    "name": "Business Standard",
+                    "enabled": true
+                },
+                {
+                    "id": "livemint_companies",
+                    "url": "https://www.livemint.com/rss/companies",
+                    "category": "business",
+                    "name": "Livemint Companies",
+                    "enabled": true
+                }
+            ]
+        },
+        "tech": {
+            "tier": 2,
+            "sources": [
+                {
+                    "id": "indianexpress_tech",
+                    "url": "https://indianexpress.com/section/technology/feed/",
+                    "category": "tech",
+                    "name": "Indian Express Technology",
+                    "enabled": true
+                },
+                {
+                    "id": "thehindu_tech",
+                    "url": "https://www.thehindu.com/sci-tech/technology/?service=rss",
+                    "category": "tech",
+                    "name": "The Hindu Technology",
+                    "enabled": true
+                },
+                {
+                    "id": "ht_technology",
+                    "url": "https://feeds.hindustantimes.com/HT-Technology",
+                    "category": "tech",
+                    "name": "Hindustan Times Technology",
+                    "enabled": true
+                }
+            ]
+        },
+        "sports": {
+            "tier": 2,
+            "sources": [
+                {
+                    "id": "espncricinfo",
+                    "url": "https://www.espncricinfo.com/rss/content/story/feeds/6.xml",
+                    "category": "sports",
+                    "name": "ESPN Cricinfo",
+                    "enabled": true
+                },
+                {
+                    "id": "thehindu_sport",
+                    "url": "https://www.thehindu.com/sport/?service=rss",
+                    "category": "sports",
+                    "name": "The Hindu Sport",
+                    "enabled": true
+                },
+                {
+                    "id": "ht_sport",
+                    "url": "https://feeds.hindustantimes.com/HT-Sport",
+                    "category": "sports",
+                    "name": "Hindustan Times Sport",
+                    "enabled": true
+                }
+            ]
+        }
+    }
+}

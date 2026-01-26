@@ -47,7 +47,8 @@ from ..contracts.base import (
 from ..contracts.events import (
     RawIngestionEvent, NormalizedFragment, NormalizationResult,
     DuplicateInfo, DuplicateStatus, ContradictionInfo, ContradictionStatus,
-    AuditLogEntry, AuditEventType
+    AuditLogEntry, AuditEventType,
+    EmbeddingVector, SimilarityScore  # ML coordinate transform contracts
 )
 
 
@@ -433,6 +434,11 @@ class NormalizationConfig:
     duplicate_similarity_threshold: float = 0.8
     min_payload_length: int = 1
     max_payload_length: int = 100000
+    
+    # ML Coordinate Transform (Phase 1)
+    enable_embeddings: bool = False  # Opt-in, graceful degradation if unavailable
+    embedding_model_id: str = "all-MiniLM-L6-v2"
+    embedding_model_version: str = "1.0.0"
 
 
 class NormalizationEngine:
@@ -444,6 +450,11 @@ class NormalizationEngine:
     - Produces ONLY NormalizedFragment objects
     - Does NOT access storage, core engine, or query layers
     - Does NOT resolve contradictions, only tags them
+    
+    ML INTEGRATION (Phase 1):
+    - Embedding service computes coordinate transforms
+    - Returns raw vectors and similarity scores
+    - Does NOT make decisions based on thresholds
     """
     
     def __init__(self, config: Optional[NormalizationConfig] = None):
@@ -456,6 +467,37 @@ class NormalizationEngine:
         self._topic_classifier = TopicClassifier()
         self._entity_extractor = EntityExtractor()
         self._audit_log: List[AuditLogEntry] = []
+        
+        # ML Embedding Service (optional, graceful degradation)
+        self._embedding_service = None
+        if self._config.enable_embeddings:
+            self._init_embedding_service()
+    
+    def _init_embedding_service(self) -> None:
+        """Initialize embedding service with graceful degradation."""
+        try:
+            from .embedding_service import EmbeddingService, EmbeddingServiceConfig
+            embedding_config = EmbeddingServiceConfig(
+                model_id=self._config.embedding_model_id,
+                model_version=self._config.embedding_model_version
+            )
+            self._embedding_service = EmbeddingService(embedding_config)
+            if self._embedding_service.is_available():
+                self._log_audit(
+                    action="embedding_service_initialized",
+                    metadata=(
+                        ("model_id", self._config.embedding_model_id),
+                        ("model_version", self._config.embedding_model_version),
+                    )
+                )
+            else:
+                self._embedding_service = None  # Model not available
+        except ImportError:
+            # embedding_service not available, continue without ML
+            self._embedding_service = None
+        except Exception:
+            # Any other error, continue without ML
+            self._embedding_service = None
     
     def normalize(self, event: RawIngestionEvent) -> NormalizationResult:
         """
@@ -536,6 +578,27 @@ class NormalizationEngine:
                 status=ContradictionStatus.NO_CONTRADICTION
             )
         
+        # ML COORDINATE TRANSFORM: Compute embedding (if service available)
+        # This is geometry computation, NOT semantic understanding
+        embedding_vector = None
+        nearest_similarity = None
+        nearest_fragment_id = None
+        
+        if self._embedding_service is not None:
+            # Compute embedding for this fragment
+            embedding_vector = self._embedding_service.compute_embedding(payload)
+            
+            if embedding_vector is not None:
+                # Find nearest neighbor - returns RAW similarity, NO threshold decision
+                nearest_frag, nearest_sim = self._embedding_service.find_nearest(
+                    embedding=embedding_vector,
+                    exclude_ids=[]  # Don't exclude anything
+                )
+                
+                if nearest_frag is not None:
+                    nearest_fragment_id = nearest_frag
+                    nearest_similarity = nearest_sim
+        
         # Create normalized fragment
         fragment = NormalizedFragment(
             fragment_id=fragment_id,
@@ -548,7 +611,11 @@ class NormalizationEngine:
             duplicate_info=duplicate_info,
             contradiction_info=contradiction_info,
             normalization_timestamp=Timestamp.now(),
-            source_metadata=event.source_metadata
+            source_metadata=event.source_metadata,
+            # ML fields (may be None if service unavailable)
+            embedding_vector=embedding_vector,
+            nearest_similarity=nearest_similarity,
+            nearest_fragment_id=nearest_fragment_id
         )
         
         # Register with detectors (only if unique)
@@ -563,18 +630,30 @@ class NormalizationEngine:
                 content=payload,
                 topics=topics
             )
+            
+            # Register embedding in index (for future nearest neighbor lookups)
+            if self._embedding_service is not None and embedding_vector is not None:
+                self._embedding_service.register_embedding(fragment_id, embedding_vector)
         
         processing_time_ms = (time.time() - start_time) * 1000
+        
+        # Build audit metadata
+        audit_metadata = [
+            ("duplicate_status", duplicate_info.status.value),
+            ("contradiction_status", contradiction_info.status.value),
+            ("topic_count", str(len(topics))),
+            ("processing_time_ms", f"{processing_time_ms:.2f}"),
+        ]
+        if embedding_vector is not None:
+            audit_metadata.append(("has_embedding", "true"))
+            audit_metadata.append(("embedding_dim", str(embedding_vector.dimension)))
+        if nearest_similarity is not None:
+            audit_metadata.append(("nearest_similarity", f"{nearest_similarity.value:.4f}"))
         
         self._log_audit(
             action="fragment_normalized",
             entity_id=fragment_id.value,
-            metadata=(
-                ("duplicate_status", duplicate_info.status.value),
-                ("contradiction_status", contradiction_info.status.value),
-                ("topic_count", str(len(topics))),
-                ("processing_time_ms", f"{processing_time_ms:.2f}"),
-            )
+            metadata=tuple(audit_metadata)
         )
         
         return NormalizationResult(

@@ -40,7 +40,7 @@ import csv
 import hashlib
 
 # ONLY import from contracts - never from other layers
-from ..contracts.base import SourceId, Timestamp, Error, ErrorCode, Result
+from ..contracts.base import SourceId, Timestamp, Error, ErrorCode, Result, SourceTier
 from ..contracts.events import RawIngestionEvent, IngestionBatch, AuditLogEntry, AuditEventType
 
 
@@ -54,12 +54,22 @@ class IngestionAdapter(ABC):
     
     Each adapter knows how to pull/receive data from ONE type of source.
     Adapters produce raw events, never interpreted data.
+    
+    SHADOW MODE SUPPORT:
+    - source_tier property classifies adapter output (MOCK, PUBLIC_RSS)
+    - Tier is metadata only, no interpretive weighting
     """
     
     @property
     @abstractmethod
     def source_type(self) -> str:
         """Return the type of source this adapter handles."""
+        pass
+    
+    @property
+    @abstractmethod
+    def source_tier(self) -> SourceTier:
+        """Return the tier classification for this adapter."""
         pass
     
     @abstractmethod
@@ -79,6 +89,10 @@ class JsonFileAdapter(IngestionAdapter):
     @property
     def source_type(self) -> str:
         return "json_file"
+    
+    @property
+    def source_tier(self) -> SourceTier:
+        return SourceTier.MOCK  # File-based adapters are mock tier
     
     def validate_source(self, source_id: SourceId) -> Result:
         """Validate JSON file exists and is readable."""
@@ -148,6 +162,10 @@ class CsvFileAdapter(IngestionAdapter):
     def source_type(self) -> str:
         return "csv_file"
     
+    @property
+    def source_tier(self) -> SourceTier:
+        return SourceTier.MOCK  # File-based adapters are mock tier
+    
     def validate_source(self, source_id: SourceId) -> Result:
         """Validate CSV file exists and is readable."""
         import os
@@ -200,6 +218,10 @@ class InMemoryAdapter(IngestionAdapter):
     def source_type(self) -> str:
         return "in_memory"
     
+    @property
+    def source_tier(self) -> SourceTier:
+        return SourceTier.MOCK  # In-memory adapters are mock tier
+    
     def validate_source(self, source_id: SourceId) -> Result:
         """In-memory sources are always valid."""
         return Result.success(True)
@@ -232,6 +254,10 @@ class RssFileAdapter(IngestionAdapter):
     @property
     def source_type(self) -> str:
         return "rss"
+    
+    @property
+    def source_tier(self) -> SourceTier:
+        return SourceTier.MOCK  # File-based RSS adapter is mock tier
     
     def validate_source(self, source_id: SourceId) -> Result:
         """Validate source against Immutable Registry."""

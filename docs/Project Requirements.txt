@@ -1,0 +1,94 @@
+﻿1. PRD (Product Requirements Document)
+What it is (in this project)
+The PRD defines the problem-space.
+It formalizes what reality must look like after the system exists, without caring how that reality is achieved.
+Think of it as a research hypothesis + legal boundary:
+* Hypothesis: what outcomes should emerge if the system works
+* Boundary: what is explicitly out of scope
+What it answers
+* Why does the Narrative Intelligence Engine need to exist?
+* Who is the system for?
+* What capabilities must be observable from the outside?
+* How do we know the system is successful without opening it up?
+What it must NOT contain
+* No pipelines
+* No models
+* No databases
+* No architecture
+* No implementation logic
+If the PRD says how, it's already corrupted.
+Project-specific example (isolated to this project)
+* The PRD states that the system must detect narrative displacement across time windows.
+* It does not say how narratives are represented, tracked, or computed.
+* It defines success as "ability to surface structurally significant narrative shifts despite incomplete and biased data."
+That's a measurable outcome, not a mechanism.
+
+2. Design Document (UX / Interaction Design)
+What it is (in this project)
+The Design Doc defines the sense-making interface between humans and the system.
+It assumes the PRD is locked and asks:
+"Given these outcomes, how does a human interrogate, explore, and trust the system?"
+Cross-domain analogy:
+* PRD = experimental hypothesis
+* Tech Doc = lab machinery
+* Design Doc = the microscope eyepiece
+Same experiment, different cognitive layer.
+What it answers
+* How does a user navigate narrative timelines?
+* How are uncertainty, gaps, and ambiguity shown without false precision?
+* What questions can the user ask, and in what sequence?
+* How does the system avoid implying intent where none is inferred?
+What it must NOT contain
+* No APIs
+* No backend logic
+* No storage models
+* No algorithms
+It deals in interactions, states, affordances, and mental models, not computation.
+Project-specific example
+* The Design Doc specifies a temporal comparison view where Event A and Event B are juxtaposed.
+* It defines how attention concentration and silence are visually expressed.
+* It explicitly avoids labels like "manipulation" or "bias," preserving analytical neutrality.
+The Design Doc answers how insight emerges, not how data flows.
+
+3. Technical Document (Tech Spec / Architecture)
+What it is (in this project)
+The Tech Doc defines the causal machinery that makes the PRD's outcomes possible.
+It treats the system as a temporal-causal inference engine, not a product.
+Cross-domain analogy:
+* PRD = what the aircraft must achieve
+* Design = cockpit ergonomics
+* Tech Doc = aerodynamics + engine physics
+What it answers
+* How are narratives represented as structures over time?
+* How does the system tolerate incomplete, delayed, or biased inputs?
+* How are correlations preserved without assuming intent?
+* How do components interact under uncertainty?
+What it must NOT contain
+* No business justification
+* No user personas
+* No product vision
+* No success metrics phrased in business language
+It explains how the system works, not why it exists.
+Project-specific example
+* The Tech Doc defines mechanisms for temporal alignment across heterogeneous sources.
+* It explains how narrative signals are tracked without collapsing them into sentiment.
+* It formalizes how "absence" is modeled as a first-class analytical signal.
+This is where causality, structure, and constraints live.
+
+One-line separation (project-accurate)
+* PRD → What must become true about public-discourse analysis
+* Design Doc → How a human perceives and interrogates that truth
+* Tech Doc → How the system makes that truth computable
+
+Common failure modes (worth calling out)
+* PRD mentions pipelines → it's leaking Tech
+* Design Doc explains data processing → it's leaking Tech
+* Tech Doc argues why the product matters → it's leaking PRD
+* Any doc claims certainty where the project assumes uncertainty → conceptual violation
+
+Unknowns (explicitly acknowledged)
+* How users will emotionally interpret "silence" vs "absence"
+* Whether narrative displacement can be universally quantified across domains
+* How much uncertainty visualization improves trust vs confusion
+* Long-term drift in narrative structures themselves
+* Edge cases where lack of coverage is itself noisy, not meaningful

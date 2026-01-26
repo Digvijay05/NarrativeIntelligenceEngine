@@ -384,9 +384,230 @@ class RewindQueryHandler(QueryHandler):
         )
 
 
-# =============================================================================
-# QUERY ENGINE (Orchestrates query handling)
-# =============================================================================
+
+class SimilarityQueryHandler(QueryHandler):
+    """
+    Handler for similarity queries.
+    
+    Delegates to EmbeddingService to find similar fragments.
+    Returns raw similarity scores (no thresholds).
+    """
+    
+    @property
+    def query_type(self) -> QueryType:
+        return QueryType.SIMILARITY
+    
+    def handle(
+        self,
+        request: QueryRequest,
+        storage: TemporalStorageEngine
+    ) -> QueryResult:
+        start_time = time.time()
+        
+        if not request.fragment_id:
+            return QueryResult.failed(
+                query_id=request.query_id,
+                query_type=self.query_type,
+                error=QueryError(
+                    error_code=ErrorCode.INSUFFICIENT_DATA,
+                    message="fragment_id is required for similarity queries",
+                    query_id=request.query_id,
+                    timestamp=Timestamp.now()
+                )
+            )
+            
+        # Get fragment to search with
+        fragment = storage.backend.get_fragment(request.fragment_id)
+        if not fragment:
+             return QueryResult.empty(
+                query_id=request.query_id,
+                query_type=self.query_type,
+                execution_time_ms=(time.time() - start_time) * 1000
+            )
+            
+        # Lazy import to avoid circular dependency
+        from ..normalization.embedding_service import EmbeddingService
+        
+        # In a real system, EmbeddingService would be injected or singleton
+        # For this prototype, we instantiate it (it handles lazy model loading)
+        service = EmbeddingService()
+        
+        # We need to find all other fragments to compare against
+        # In production, this would use a vector DB (FAISS/Chroma)
+        # Here we scan all fragments from storage (forensic constraints: accuracy > speed)
+        # Note: This is O(N) but explicit and deterministic
+        all_fragment_ids = storage.backend.get_all_fragment_ids()
+        
+        results = []
+        for other_id in all_fragment_ids:
+            if other_id.value == request.fragment_id.value:
+                continue
+                
+            other_frag = storage.backend.get_fragment(other_id)
+            if other_frag and other_frag.embedding_vector:
+                # Compute similarity
+                score = service.compute_similarity(
+                    fragment.embedding_vector, 
+                    other_frag.embedding_vector
+                )
+                if score:
+                    results.append((other_frag, score))
+        
+        # Sort by similarity descending
+        results.sort(key=lambda x: x[1].value, reverse=True)
+        results = results[:request.max_results]
+        
+        execution_time_ms = (time.time() - start_time) * 1000
+        
+        return QueryResult(
+            query_id=request.query_id,
+            query_type=self.query_type,
+            success=True,
+            result_count=len(results),
+            results=tuple(results),
+            execution_time_ms=execution_time_ms
+        )
+
+
+class TopologyQueryHandler(QueryHandler):
+    """
+    Handler for topology queries.
+    
+    Delegates to TopologyEngine to analyze thread structure.
+    Returns geometric metrics (density, diameter) and components.
+    """
+    
+    @property
+    def query_type(self) -> QueryType:
+        return QueryType.TOPOLOGY
+    
+    def handle(
+        self,
+        request: QueryRequest,
+        storage: TemporalStorageEngine
+    ) -> QueryResult:
+        start_time = time.time()
+        
+        if not request.thread_id:
+            return QueryResult.failed(
+                query_id=request.query_id,
+                query_type=self.query_type,
+                error=QueryError(
+                    error_code=ErrorCode.INSUFFICIENT_DATA,
+                    message="thread_id is required for topology queries",
+                    query_id=request.query_id,
+                    timestamp=Timestamp.now()
+                )
+            )
+            
+        # Get thread snapshot
+        snapshot = storage.backend.get_latest_snapshot(request.thread_id)
+        if not snapshot:
+             return QueryResult.empty(
+                query_id=request.query_id,
+                query_type=self.query_type,
+                execution_time_ms=(time.time() - start_time) * 1000
+            )
+            
+        # Lazy import
+        from ..core.topology import TopologyEngine
+        
+        engine = TopologyEngine()
+        engine.build_graph(
+            fragment_ids=snapshot.member_fragment_ids,
+            relations=snapshot.relations
+        )
+        
+        metrics = engine.compute_metrics()
+        components = engine.get_connected_components()
+        
+        execution_time_ms = (time.time() - start_time) * 1000
+        
+        return QueryResult(
+            query_id=request.query_id,
+            query_type=self.query_type,
+            success=True,
+            result_count=1,
+            results=((metrics, components),),
+            execution_time_ms=execution_time_ms
+        )
+
+
+class AlignmentQueryHandler(QueryHandler):
+    """
+    Handler for timeline alignment queries.
+    
+    Delegates to TemporalAlignmentEngine (DTW).
+    Returns alignment path and distance between two threads.
+    """
+    
+    @property
+    def query_type(self) -> QueryType:
+        return QueryType.ALIGNMENT
+    
+    def handle(
+        self,
+        request: QueryRequest,
+        storage: TemporalStorageEngine
+    ) -> QueryResult:
+        start_time = time.time()
+        
+        if not request.thread_id or not request.comparison_thread_id:
+            return QueryResult.failed(
+                query_id=request.query_id,
+                query_type=self.query_type,
+                error=QueryError(
+                    error_code=ErrorCode.INSUFFICIENT_DATA,
+                    message="Both thread_id and comparison_thread_id required for alignment",
+                    query_id=request.query_id,
+                    timestamp=Timestamp.now()
+                )
+            )
+            
+        # Get timelines
+        timeline_a = storage.get_thread_timeline(request.thread_id, request.time_range)
+        timeline_b = storage.get_thread_timeline(request.comparison_thread_id, request.time_range)
+        
+        # Lazy import
+        from ..core.alignment import TemporalAlignmentEngine
+        
+        # Extract signal (using activity density or similar scalar)
+        # For this prototype, we'll use simple presence (1.0) at timestamps
+        # In reality, we'd resample this to a fixed grid.
+        # Simplification: pass point counts or similar.
+        # Better: AlignmentEngine expects lists of floats.
+        # We will use the number of events per day/hour or just raw timestamps?
+        # DTW works on sequences. Let's use timestamp values normalized.
+        
+        # Extract timestamps as the signal feature
+        # (This aligns "when things happened")
+        ts_a = [
+            p.timestamp.value.timestamp() 
+            for p in (timeline_a.points if timeline_a else ())
+            if p.timestamp and p.timestamp.value
+        ]
+        ts_b = [
+            p.timestamp.value.timestamp() 
+            for p in (timeline_b.points if timeline_b else ())
+            if p.timestamp and p.timestamp.value
+        ]
+        
+        # Normalize to start at 0? DTW handles shift.
+        
+        engine = TemporalAlignmentEngine()
+        result_align = engine.compute_alignment(ts_a, ts_b)
+        
+        execution_time_ms = (time.time() - start_time) * 1000
+        
+        return QueryResult(
+            query_id=request.query_id,
+            query_type=self.query_type,
+            success=True,
+            result_count=1,
+            results=(result_align,),
+            execution_time_ms=execution_time_ms
+        )
+
 
 @dataclass
 class QueryEngineConfig:
@@ -428,6 +649,9 @@ class QueryEngine:
         self.register_handler(FragmentTraceQueryHandler())
         self.register_handler(ComparisonQueryHandler())
         self.register_handler(RewindQueryHandler())
+        self.register_handler(SimilarityQueryHandler())
+        self.register_handler(TopologyQueryHandler())
+        self.register_handler(AlignmentQueryHandler())
     
     def register_handler(self, handler: QueryHandler):
         """Register a query handler."""
@@ -462,6 +686,8 @@ class QueryEngine:
         try:
             result = handler.handle(request, self._storage)
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             return QueryResult.failed(
                 query_id=request.query_id,
                 query_type=request.query_type,

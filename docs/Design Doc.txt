@@ -1,0 +1,74 @@
+﻿
+UX / Interaction Design Document
+Product: Narrative Intelligence Engine
+
+1. Design Principles
+Epistemic goals
+* Clarity over certainty: The interface privileges traceable structure and temporal coherence, not definitive conclusions.
+* Continuity over immediacy: Understanding emerges across time spans, not single moments.
+* Comparability over persuasion: Users are enabled to contrast narratives without being nudged toward an interpretation.
+* Absence as signal: Silence, delay, and disappearance are treated as first-class informational states.
+Explicit anti-goals
+* The interface must never imply truth adjudication, intent attribution, or moral judgment.
+* The interface must never suggest predictive power or foresight.
+* The interface must never collapse multiple narratives into a single "master story."
+* The interface must never reward speed, virality, or popularity cues.
+
+2. Primary User Flows
+Flow A: Investigating a Hidden Progression
+Entry point: The user arrives at a neutral landing surface presenting recent narrative landscapes, not headlines.
+Exploration: The user selects a visible high-attention event window and expands its temporal boundary. Parallel narrative bands appear beneath the dominant one.
+Sense-making: The user notices a low-visibility narrative steadily advancing during the same window. They trace its continuity across weeks.
+Exit: The user bookmarks the reconstructed narrative arc and exports a reference view for later inspection.
+Flow B: Understanding Narrative Collapse
+Entry point: The user enters via a topic search framed as "What changed over time?"
+Exploration: The system presents a longitudinal timeline with visible intensity decay.
+Sense-making: The user inspects the moment where discourse drops without resolution markers. The interface highlights unresolved states rather than conclusions.
+Exit: The user records an analytic note acknowledging ambiguity and exits without forced synthesis.
+
+3. Core Screens / States
+A. Narrative Landscape Overview
+Purpose: Establish the field of competing narratives.
+Primary question: "What stories are coexisting right now?"
+Do not show: Judgments, summaries, or causal explanations.
+B. Timeline Deep Dive
+Purpose: Reveal progression, acceleration, stalling, or disappearance.
+Primary question: "How did this narrative behave over time?"
+Do not show: Sentiment labels, rankings, or predictions.
+C. Parallel Narrative Comparison
+Purpose: Enable side-by-side temporal reasoning.
+Primary question: "What advanced while attention was elsewhere?"
+Do not show: Aggregated scores or dominant-story emphasis.
+D. Evidence Trace View
+Purpose: Allow inspection of why structure appears as shown.
+Primary question: "What supports this shape?"
+Do not show: Hidden inference steps or opaque summaries.
+
+4. Narrative Visualization Mechanics
+* Timelines: Elastic rather than fixed, stretching to emphasize quiet continuity as much as peaks.
+* Parallel narratives: Rendered as adjacent bands with independent lifecycles, not stacked hierarchies.
+* Attention shifts: Visualized as divergence between narrative momentum and discourse intensity.
+* Silence / absence: Represented as faded continuity lines with explicit markers indicating unresolved states, not blank space.
+
+5. Edge Cases & Failure States
+* Incomplete data: The interface surfaces gaps as shaded uncertainty zones, never smoothing them away.
+* Conflicting sources: Divergence is displayed spatially, allowing coexistence without forced reconciliation.
+* Sudden narrative collapse: Marked as "cessation without closure," distinct from resolution.
+* Overlapping events with unclear causality: Shown as intersecting timelines without arrows or causal claims.
+
+6. Trust & Explainability Affordances
+* Users can expand any narrative segment to see why it exists, when it formed, and what sustained it.
+* Structural reversibility is emphasized: timelines can be rewound, narrowed, or expanded without penalty.
+* Auditability is conveyed through consistent, repeatable narrative shapes when revisited.
+
+7. Accessibility & Cognitive Ergonomics
+* Reading load: Short declarative labels replace paragraphs; prose is optional, never mandatory.
+* Visual density: Information layers are progressive, revealed only on interaction.
+* Progressive disclosure rules: No screen reveals more than one analytic dimension at a time (time, comparison, or traceability).
+
+8. Open Design Questions
+* How much ambiguity users tolerate before seeking external confirmation.
+* Whether different personas require distinct default temporal scales.
+* How to visually encode long-term narrative persistence without implying importance.
+* When silence should prompt user attention versus remain unobtrusive.
+

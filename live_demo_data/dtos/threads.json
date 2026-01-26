@@ -1,0 +1,2814 @@
+[
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_5fc9c9be242e",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "warehouse",
+      "massive",
+      "fire",
+      "missing",
+      "seven",
+      "feared",
+      "kolkata",
+      "several"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_a3281f1655c50e55"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_f8657e605d54",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "kogilu",
+      "during",
+      "displaced",
+      "republic",
+      "families",
+      "layout",
+      "demolition",
+      "observe"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_0556055b3768d8bf"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7f6f70afc693",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "development",
+      "work",
+      "together",
+      "district",
+      "urged",
+      "public"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_eb20a4431239094e"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_331eb1bed4c4",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "organisations",
+      "awards",
+      "governor",
+      "honours",
+      "with",
+      "excellence"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_bdd98f1c350a1af1"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_025f3fd845d1",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "slams",
+      "centre",
+      "aidwa"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_842b0227dc3574f3"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_0bef12ec7bd8",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "world",
+      "republic",
+      "abroad",
+      "leaders",
+      "greetings",
+      "from",
+      "indians",
+      "pour",
+      "celebrate"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_9967f4ff219b8e76"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_6b24dee8a529",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "republic",
+      "mataram",
+      "tableaux",
+      "parade",
+      "vande"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_933ada11d4de0e37"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_07070ef5916a",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "citizen",
+      "constitution",
+      "rahul",
+      "republic",
+      "shield",
+      "gandhi",
+      "protective",
+      "says"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_93276fb5e7b4d2ce"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_41a44c807fb7",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "without",
+      "march",
+      "stop",
+      "long",
+      "protesters",
+      "towards",
+      "meeting",
+      "refuse"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_5ad7a9e9cf1166c1"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_9025c6ea5c2f",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_national"
+    ],
+    "topic_tokens": [
+      "protest",
+      "today"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_0147c4416bc133fe"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_national_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_c9ac81b0c54b",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "from",
+      "entering",
+      "board"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_e1ba23b62b7cf957"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_8aba1970d519",
+    "lifecycle_state": "unresolved",
+    "fragment_count": 2,
+    "source_ids": [
+      "indianexpress_india",
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "could",
+      "macron",
+      "social",
+      "under",
+      "children",
+      "media",
+      "pushes"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 2,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_ce349ac14892a473",
+        "frag_25656fe391608f5d"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml",
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_30abeab429b3",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "tuesday",
+      "closed",
+      "these",
+      "bank",
+      "remain",
+      "still",
+      "customers",
+      "strike",
+      "january",
+      "access"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_a8d9b4828433846d"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_5b09a0e0f59e",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "ambassador",
+      "confidently",
+      "trade",
+      "moving",
+      "billion",
+      "russia",
+      "target",
+      "achieve"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_bed03e5f441dd8a4"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_61faccacaca3",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "focus",
+      "speech",
+      "republic",
+      "deputy",
+      "than",
+      "more",
+      "conciliatory",
+      "what"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_c1b13eb0b1f1a1e7"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_e5356432e2ee",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "sindoor",
+      "heart",
+      "operation",
+      "sinha",
+      "struck",
+      "manoj"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_4f9c8f20ff2e6964"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_c5df4e8bfa1b",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "questioning",
+      "hails",
+      "hosabale",
+      "constitution",
+      "dattatreya",
+      "months",
+      "after",
+      "leader",
+      "preamble"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_6269b3a6841754b8"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7216bccc8cb8",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "bharat",
+      "coaches",
+      "rakes",
+      "manufacture",
+      "sleeper",
+      "vande"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_ccbb38d40afc981e"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_02ebf49c6a2d",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "panchayat",
+      "will",
+      "boycott",
+      "whose",
+      "marry",
+      "families",
+      "village",
+      "pradesh",
+      "elope",
+      "madhya"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_71abe646d32ebb1b"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_0bf199893152",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_india"
+    ],
+    "topic_tokens": [
+      "political",
+      "about",
+      "ezhava",
+      "doubts",
+      "plans",
+      "drops",
+      "outfit",
+      "with",
+      "leader",
+      "nair"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_598edf0f50b6e17a"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_india_20260126164611.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_c8d086c4df41",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "india",
+      "mark",
+      "across",
+      "revered",
+      "tributes",
+      "broadcaster",
+      "pour",
+      "tully"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_e71e03151b0e27c9"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_5f39fc205d6a",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "carpet",
+      "republic",
+      "foreign",
+      "means",
+      "policy",
+      "what"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_96011e0f4cd21cd5"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7d68dcdd6c55",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "dies",
+      "aged",
+      "mark"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_684b8301f18f369e"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_ee117d6f1bc2",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "scotland",
+      "world",
+      "bangladesh",
+      "replace"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_b3a7049e4f14ff66"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_4d0610280f5a",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "uncertainty",
+      "looms",
+      "tariff",
+      "india"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_39becea54f274326"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_da6df992b32e",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "hundreds",
+      "investigates",
+      "dogs",
+      "stray",
+      "telangana",
+      "killings"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_5f6c618ba472ed8a"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_f9bdb9da7b51",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "model",
+      "watchmaker",
+      "designs",
+      "statue",
+      "luxury",
+      "with",
+      "indian"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_9b83b6beb4680d95"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7c609b298b06",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "outrage",
+      "help",
+      "drowns",
+      "hours",
+      "open",
+      "begging",
+      "after"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_af8fdcf7737e54a6"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_64150b42863e",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "arrested",
+      "sexual",
+      "suicide",
+      "woman",
+      "misconduct",
+      "accused",
+      "after"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_97db353e6a5ad34a"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_2a7c4cc26d42",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "bbc_india"
+    ],
+    "topic_tokens": [
+      "reckoning",
+      "face",
+      "thriving",
+      "platforms",
+      "year",
+      "online",
+      "delivery"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_cc4b866c5f51ba1f"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\bbc_india_20260126164612.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7c23c5f5992e",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "paints",
+      "volume",
+      "growth",
+      "pick",
+      "seen",
+      "asian"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_a01b93f4eb6708a8"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_850e7b33b958",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "hints",
+      "shadowfax",
+      "dull",
+      "discounted",
+      "issues"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_3ee85a76ffc3a858"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_e9a9e98dabcb",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "timothy",
+      "india",
+      "sachs",
+      "comeback",
+      "foreign",
+      "flows",
+      "goldman",
+      "says"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_ca4c4d099fc40f22"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_cf4018052bfc",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "higher",
+      "open",
+      "deck",
+      "tech",
+      "slightly",
+      "with",
+      "decision"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_078bcb4bcaffa535"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7def701b6114",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "rises",
+      "axis",
+      "grows",
+      "bank"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_3421fc9b77a54174"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_94e7c3452e7e",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "where",
+      "joanne",
+      "lies",
+      "value",
+      "indian"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_752a80ea6014f7be"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_6750a53806e1",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "trade",
+      "tech",
+      "exports",
+      "more",
+      "deal",
+      "push",
+      "give"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_fe5a828c63fdf4f8"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_96ae9f1e832b",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "india",
+      "russian",
+      "rollback",
+      "signals",
+      "imports",
+      "tariff",
+      "possible",
+      "fall"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_e33bc671536cbe9f"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_404c61ceb2d2",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "import",
+      "spur",
+      "likely",
+      "surge",
+      "imports",
+      "auto",
+      "luxury"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_03252e55d6d5e6bc"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_8fd79af7a09f",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "economictimes"
+    ],
+    "topic_tokens": [
+      "fiscal",
+      "deficit",
+      "cent",
+      "widens",
+      "consolidated"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_708e8b2af8c93a5e"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\economictimes_20260126164618.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_740fcb3a622f",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "killed",
+      "business",
+      "survived",
+      "maine",
+      "snow",
+      "crash",
+      "private"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_d3bcebc54f028ead"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_49f4204a2346",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "partnership",
+      "defence",
+      "pact",
+      "strategic",
+      "with",
+      "upgrade"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_274c4346665f0415"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_ea152a72e046",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "commerce",
+      "concludes",
+      "secy",
+      "negotiations"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_25da542ec907be88"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_90b7c6950048",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "infrastructure",
+      "labs",
+      "partners",
+      "pine",
+      "bank",
+      "tech",
+      "with"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_5efebe399081779a"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_2f9a4b3cb404",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "real",
+      "with",
+      "estate",
+      "parent",
+      "propequity",
+      "cambridge",
+      "school"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_dec098465c02f702"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_f364877f03f4",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "tuesday",
+      "unions",
+      "work",
+      "strike",
+      "week",
+      "banking"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_537a77802ec2dbab"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_8642c197c055",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "india",
+      "mark",
+      "trade",
+      "visit",
+      "cepa",
+      "carney",
+      "talks",
+      "begin",
+      "canada"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_6e9aa94500f27272"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_8226b02e4432",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "march",
+      "subsidy",
+      "extension",
+      "beyond",
+      "seek",
+      "makers"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_4b03334063a2927f"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_5ac50f0d0ee8",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "businessstandard"
+    ],
+    "topic_tokens": [
+      "could",
+      "boost",
+      "india",
+      "cuts",
+      "says",
+      "luxury",
+      "duty"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_009d0684aa96987b"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\businessstandard_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_9722c5624b63",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "project",
+      "hurdle",
+      "bengaluru",
+      "runs",
+      "legal",
+      "into",
+      "maiden"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_23b27259658126f8"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_62752d5e8fd4",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "expands",
+      "partnership",
+      "data",
+      "nvidia",
+      "invests",
+      "billion",
+      "centre"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_c0e3d374d7b9a358"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_0155370c7683",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "tower",
+      "majority",
+      "transmission",
+      "stake",
+      "acquire",
+      "technologies",
+      "waaree",
+      "crore",
+      "firm"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_ccec29179ae37926"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_4dc5ca9eefec",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "data",
+      "boom",
+      "risk",
+      "internet",
+      "tariff",
+      "cable",
+      "missing",
+      "makers",
+      "centre",
+      "indian"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_132f8374200c5a6b"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_dafd8fd76c7e",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "create",
+      "sellers",
+      "wants",
+      "websites",
+      "amazon",
+      "free",
+      "their"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_2d2f36cfea3b4529"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_3716106164aa",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "dreamliner",
+      "india",
+      "boeing",
+      "orders",
+      "concerns",
+      "tariff",
+      "from",
+      "more",
+      "expects",
+      "amid"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_e4526f51cf4dc007"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7de896752507",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "administration",
+      "combinator",
+      "alex",
+      "death",
+      "over",
+      "matter",
+      "leaders",
+      "call",
+      "trump"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_c6f5dec40730c0b6"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_06a7c2d19d93",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "bill",
+      "other",
+      "business",
+      "republic",
+      "kiran",
+      "extend",
+      "leaders",
+      "wishes",
+      "anand"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_fe7ccf83c6ad8b14"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_6cb3735d7888",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "approval",
+      "samsung",
+      "nears",
+      "memory",
+      "chips"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_fd4010d3443eceb2"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_04cf23746f72",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "livemint_companies"
+    ],
+    "topic_tokens": [
+      "risk",
+      "swap",
+      "explores",
+      "irfc",
+      "swiss",
+      "dollar",
+      "franc",
+      "some"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_e428af9b4d0843e5"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\livemint_companies_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_96dd71afc485",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "income",
+      "yougov",
+      "over",
+      "esports",
+      "poll",
+      "players",
+      "indian",
+      "streaming"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_b1095a7e36ccd9d7"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_81ac3ceaf1db",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "cites",
+      "source",
+      "grokipedia",
+      "elon",
+      "multiple",
+      "chatgpt",
+      "report"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_bbfab4eb7a18aa22"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7642c93d8c8f",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "sounds",
+      "regulation",
+      "calls",
+      "pope",
+      "alarm"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_4d2dbdf7d89b92ea"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_89bb457e6985",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "using",
+      "americans",
+      "according",
+      "gallup",
+      "poll"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_9d53b14fa87629f7"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_5ec5bb713af5",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "production",
+      "nvidia",
+      "month",
+      "next",
+      "samsung",
+      "supply",
+      "start",
+      "chips"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_454ad865285c5f7e"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_dd2c1138e017",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "republic",
+      "status",
+      "whatsapp",
+      "send",
+      "happy",
+      "video",
+      "download"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_08f4bbd3d6b761aa"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_35925f27be48",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "great",
+      "cent",
+      "fifty",
+      "good",
+      "half"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_5fde40c67c94bb1c"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_3b2c156639c9",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "republic",
+      "whatsapp",
+      "send",
+      "happy",
+      "wishes",
+      "stickers"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_6ed85ebba633c08a"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_561d6cd64453",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "indianexpress_tech"
+    ],
+    "topic_tokens": [
+      "fake",
+      "creeping",
+      "into",
+      "citations",
+      "scientific",
+      "research"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_830dd3753fa84158"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\indianexpress_tech_20260126164619.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_40a855a87257",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "going",
+      "completes",
+      "wales",
+      "encyclopaedia",
+      "years",
+      "founder",
+      "wikipedia",
+      "online",
+      "jimmy",
+      "says"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_19fa241413a1a799"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_4a678ae10305",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "opens",
+      "sexual",
+      "over",
+      "deepfakes",
+      "grok",
+      "probe",
+      "into"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_f270962785af77da"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_2599b6241ecd",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "curtain",
+      "silicon",
+      "silica"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_cba67e1cc1a30cc3"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_5667f3d5215e",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "motorola",
+      "brand",
+      "lifestyle",
+      "tech",
+      "personalised",
+      "evolves",
+      "with",
+      "premium",
+      "push"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_8c30cc3ae825ed77"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_3e089139eee2",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "five",
+      "centres",
+      "india",
+      "launch",
+      "fourth",
+      "industrial"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_c3ee86acdb851ca6"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_d77b288fbac3",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "motorola",
+      "features",
+      "signature",
+      "impression",
+      "review",
+      "ensure",
+      "crafted"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_bde3cf302759dbab"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_facb216a4bf1",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "motorola",
+      "india",
+      "lytia",
+      "sony",
+      "signature",
+      "features",
+      "sale",
+      "launched",
+      "with"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_500fd104fa465f1a"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_6c95e153873f",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "lifts",
+      "malaysia",
+      "block",
+      "after",
+      "grok",
+      "measures",
+      "safety",
+      "implements"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_9674dd8a0ccc46b9"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_af98adc7e8ef",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "sources",
+      "plans",
+      "cuts",
+      "next",
+      "amazon",
+      "more",
+      "thousands",
+      "corporate"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_7a5b95d2139a8c52"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_256c0f083b81",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_tech"
+    ],
+    "topic_tokens": [
+      "consumer",
+      "outlook",
+      "chip",
+      "electronics",
+      "surging",
+      "prices",
+      "makers",
+      "memory"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_bcf585922f01213d"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_tech_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_b53791825784",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "february",
+      "zealand",
+      "miss",
+      "india",
+      "will",
+      "world",
+      "varma",
+      "join",
+      "tilak",
+      "squad"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_a07ac631238e8333"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_90a6dac172a2",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "padma",
+      "harmanpreet",
+      "award",
+      "receive",
+      "rohit",
+      "shri"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_1251b97d35ab0b94"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_e0835a22a744",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "aged",
+      "bcci",
+      "former",
+      "dies",
+      "president",
+      "bindra"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_164a350fb43f060f"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_3b81946a7790",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "abhishek",
+      "slams"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_2062cd0acd017090"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_7641f449afee",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "lead",
+      "abhishek",
+      "hand",
+      "india",
+      "fifty",
+      "unassailable",
+      "blasts",
+      "against"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_1e3656faee2a10f8"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_c47e01efa619",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "bowl",
+      "india",
+      "back",
+      "bumrah",
+      "third",
+      "against"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_d16c3825910a6e70"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_9dbe8189ccca",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "upbeat",
+      "india",
+      "zealand",
+      "series",
+      "guwahati",
+      "target",
+      "against"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_4e0384fec996c774"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_51c9bcb05eef",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "stage",
+      "india",
+      "world",
+      "face",
+      "super",
+      "pakistan"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_aecb7fc19eecdd00"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_68d5dc7a0e02",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "marker",
+      "astonishing",
+      "chase",
+      "kishan",
+      "down",
+      "suryakumar"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_df25c7d1e8cff904"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_88d132b8296a",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "espncricinfo"
+    ],
+    "topic_tokens": [
+      "suryakumar",
+      "from",
+      "what",
+      "want"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_4f93e8e5b243e1bd"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\espncricinfo_20260126164620.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_63599e75f213",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "away",
+      "hussain",
+      "strike",
+      "from",
+      "takes",
+      "again"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_87005d34ceccaaa7"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_010f64e15149",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "delays",
+      "world",
+      "decision",
+      "pakistan",
+      "participation"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_642d599899eca49c"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_c0b7bdbf2398",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "table",
+      "thunders",
+      "haryana"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_b511f780c7bf74c1"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_8729d5a35ece",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "february",
+      "derby",
+      "villoo",
+      "poonawalla",
+      "indian"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_15c7c0ea4b12fd51"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_adc84fe4fd93",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "snow",
+      "catch",
+      "girl",
+      "enrich"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_a1ec21c0a3d6a551"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_379cee5de65a",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "gavaskar",
+      "world",
+      "gushes",
+      "ahead",
+      "over",
+      "depth"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_67feda63d0c52616"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_d321f7788970",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "quarterfinals",
+      "sinner",
+      "open",
+      "heat",
+      "advances",
+      "takes",
+      "jannik",
+      "australian"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_74fe484432fd9344"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_d28423ddece6",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "defeat",
+      "gukesh",
+      "slumps",
+      "another",
+      "giri",
+      "tata",
+      "steel",
+      "against"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_fbdc9ce6b4eec014"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_45bc5f52bb1f",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "keys",
+      "jessica",
+      "open",
+      "knocked",
+      "defending",
+      "pegula",
+      "champion",
+      "madison",
+      "australian"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_675a7c7b9e0aba10"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  },
+  {
+    "dto_version": "1.0",
+    "thread_id": "thread_8a3b5c86da43",
+    "lifecycle_state": "emergence",
+    "fragment_count": 1,
+    "source_ids": [
+      "thehindu_sport"
+    ],
+    "topic_tokens": [
+      "relentless",
+      "next",
+      "saina",
+      "pushes",
+      "shows"
+    ],
+    "first_seen_at": "2026-01-26T16:46:21.493299+00:00",
+    "last_updated_at": "2026-01-26T16:46:21.493299+00:00",
+    "version": 1,
+    "evidence_trace": {
+      "fragment_ids": [
+        "frag_2db6eee5399b76f6"
+      ],
+      "raw_payload_paths": [
+        "live_demo_data\\raw\\thehindu_sport_20260126164621.xml"
+      ]
+    }
+  }
+]

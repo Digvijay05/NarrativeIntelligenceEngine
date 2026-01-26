@@ -1,0 +1,81 @@
+﻿1. Title
+Narrative Intelligence Engine for Fragmented Public Discourse
+2. Problem Statement
+Public information about complex events is produced as dispersed, short-lived fragments (headlines, posts, briefs, press notes) that rarely form a coherent, time-ordered story. Individuals and organizations trying to understand how events unfolded must manually assemble sequences, reconcile conflicting claims, and detect what progressed in low-attention windows. This fragmentation impedes accurate reconstruction of timelines, obscures parallel developments, and increases the risk that consequential actions go unnoticed by analysts, journalists, policy teams, and informed citizens.
+3. Motivation
+The volume and velocity of public discourse have increased materially while human attention and traditional editorial workflows remain bounded. Existing tools prioritize compression, recency, and engagement signals rather than the structural continuity of information; as a result, continuity, contradiction, and silence are frequently lost or misrepresented. A solution that treats narrative assembly and temporal continuity as primary concerns addresses an urgent gap: enabling stakeholders to see how events, claims, and discussions evolve and interact over weeks or months rather than as isolated moments. The project context and problem framing in the present submission format emphasize this gap between current tooling and the needs of narrative reconstruction.
+4. Target Users & Stakeholders
+Primary users
+• Journalists (beat and investigative): need reproducible timelines and evidence traces to support reporting.
+• Researchers and analysts: require coherent sequences of events across heterogeneous sources to support longitudinal study and hypothesis testing.
+• Policy professionals and advisors: must detect quietly advancing policy changes and interpret competing narratives during attention shifts.
+• Informed citizens and civic organisations: seek accessible, traceable overviews of issues that evolve over time.
+Secondary stakeholders
+• Newsrooms and editorial managers: quality control and verification workflows.
+• Think tanks and NGOs: monitoring and accountability use cases.
+• Legal and compliance teams: retention and auditability needs.
+Principal pain points (user language)
+• "I cannot reliably tell which developments are related and which are noise."
+• "Contradictory claims appear and disappear; I need to see both without forced resolution."
+• "I spend excessive time reconstructing timelines from many partial sources."
+5. Application Context
+The problem appears where distributed public information and decision-making intersect:
+• Newsrooms reconstructing multi-week beats and investigative threads.
+• Policy teams tracking legislative or regulatory shifts that proceed during low-media-attention windows.
+• Corporate or reputation monitoring where scattered signals can indicate emergent issues.
+• Academic research on media ecosystems, misinformation studies, and longitudinal discourse analysis.
+Typical settings include editorial suites, research labs, policy desks, and NGO monitoring centres; the work occurs both proactively (monitoring longitudinal change) and retrospectively (case reconstruction).
+6. Proposed Approach (Conceptual, Non-Technical)
+The idea is an evidence-first narrative assembly capability that converts dispersed public signals into human-inspectable narrative states without adjudicating truth or attributing intent.
+• Ingest: Collect timestamped public text fragments and associated metadata.
+• Extract observables: Identify events, claims, actors, and temporal anchors as distinct, inspectable items.
+• Assemble threads: Group observables into candidate narrative threads according to referential overlap, temporal adjacency, and claim relationships, while preserving alternative and conflicting threads rather than collapsing them.
+• Surface structure: Present time-ordered narrative depictions (landscapes, timelines, parallel bands) that highlight continuity, gaps, and divergences and that always link back to source evidence.
+• Support human workflow: Enable users to trace evidence, compare parallel narratives, bookmark segments, and export reference views for reporting or further analysis.
+This approach changes the user's task from "search and stitch" to "inspect and adjudicate": users receive structured narrative candidates with provenance and can focus attention on interpretation, verification, and decision-making rather than raw collection. Emphasis is placed on reversibility (views can be replayed and re-examined) and on preserving silence or absence as meaningful states.
+7. Data Signals (High-Level, Non-Technical)
+The concept relies on observable, provenance-rich signals rather than proprietary datasets:
+• Textual content: full article or post text, headlines, summaries.
+• Temporal metadata: publication timestamps, edit history, and sequence markers.
+• Source metadata: outlet, author/handle, geographic or organizational identifiers, and visible provenance.
+• Structural markers: quoted claims, named actors, direct statements, and explicit event descriptions.
+• Attention indicators: volume and timing of coverage, source diversity, and persistence of mentions (used only to describe intensity, not to assign importance scores).
+• Interaction traces: explicit citations, links between items, and observable co-reference patterns.
+These signals are described at the ordinal level (what exists and when) and must be retained with provenance to support auditability.
+8. Validation & Evaluation Strategy (Conceptual)
+Success is judged by improved human outcomes in narrative understanding and traceability, evaluated through controlled, domain-relevant exercises:
+• Comparative reconstruction tasks: domain experts (journalists, analysts) reconstruct timelines manually; compare effort, completeness, and repeatability when assisted by the proposed capability.
+• Case studies: longitudinal review of historical events to assess whether the assembled narratives capture parallel developments and unresolved divergence that manual reviews identified.
+• Usability and trust studies: qualitative assessment of whether users can locate evidentiary support quickly, perceive contradictions without forced reconciliation, and maintain situational awareness under multiple concurrent threads.
+• Auditability checks: verify that each narrative element is traceable to original items and that replaying the same inputs produces consistent narrative states.
+All evaluation focuses on outcome quality for human decision-makers (usefulness, repeatability, evidentiary trace), not on opaque internal scores.
+9. Novelty & Differentiation
+The proposed concept diverges from conventional summarization or topic-clustering in several structural ways:
+• Narrative-first framing: the unit of value is a coherent narrative state (sequence of events and relationships) rather than a compressed single-document summary.
+• Preservation of contradiction and absence: conflicting threads and unexplained silences are surfaced as first-class states instead of being smoothed away.
+• Deterministic, auditable replay: narrative states are versioned and explainable so that reconstructions are reproducible and traceable.
+• Epistemic restraint as a design principle: the solution explicitly excludes adjudication, prediction, and intent attribution, which changes user expectations and evaluative criteria relative to mainstream tools.
+10. Scope to Scale & Future Extensions
+Scaling the concept proceeds along use-case breadth and temporal depth rather than by imposing central ranking heuristics:
+• Breadth: expand from single-topic investigations to multi-topic landscapes used by national media desks, policy institutes, and cross-domain research.
+• Depth: support longer historical archives enabling decade-scale narrative replay and forensic analysis.
+• Configurable epistemic framing: allow institutional workflows to select presentation, retention, and audit settings while preserving core non-adjudicative constraints.
+• Domain adaptation: tailor narrative granularity and thread boundaries to domain norms (e.g., legal case timelines vs. scientific controversy chronology) while retaining the same evidence-first mandate.
+Scaling must be accompanied by explicit governance for schema evolution, retention policies, and mechanisms to surface and manage cognitive load as narrative multiplicity grows.
+11. Assumptions & Constraints
+Key assumptions
+• Public textual records and provenance metadata are available at sufficient volume and quality to form candidate threads.
+• Users prefer evidence-linked candidate narratives and will perform interpretive judgments rather than accept opaque system conclusions.
+• Legal and ethical constraints (copyright, privacy, terms of service) shape what content can be ingested and retained.
+Principal constraints
+• Non-goals must be enforced: the system will not adjudicate truth, attribute intent, make predictions, or subsume editorial judgment.
+• Data incompleteness and source bias are baseline conditions; outputs must represent uncertainty and absence explicitly.
+• Cognitive capacity limits: presenting multiple parallel narratives risks overload unless presentation and interaction choices limit visual/analytic density.
+• Resource constraints: append-only versioning and deterministic replay imply storage and retention trade-offs that must be acknowledged.
+12. Known Unknowns
+• Narrative boundary rules: formal thresholds for when fragments form, split, or terminate threads remain unspecified and may materially affect reproducibility.
+• Evaluation objectivity: how to measure "narrative quality" in a domain-agnostic, reproducible manner (beyond user-perceptual outcomes) is unresolved.
+• Cross-language consistency: limits and costs of extending narrative assembly reliably across multiple languages and scripts are uncertain.
+• Adversarial robustness: the impact of coordinated noise, source flooding, or deliberate manipulation on thread formation and visualization is not yet defined.
+• Storage and replay cost models: concrete budgets and retention strategies for append-only versioning and deterministic replay are open questions.
+• User tolerance for unresolved ambiguity: the optimal balance between epistemic restraint and actionable synthesis for different user groups is not established.

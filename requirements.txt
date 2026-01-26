@@ -27,3 +27,18 @@ typing_extensions==4.15.0
 urllib3==2.6.3
 uvicorn==0.40.0
 webdriver-manager==4.0.2
+
+# ML Coordinate Transforms (Phase 1)
+# These are used for embedding computation as GEOMETRY, not inference
+sentence-transformers>=2.2.0
+torch>=2.0.0
+numpy>=1.24.0
+
+# Phase 2: Graph Topology
+# Used for structural analysis (components, cycles) - GEOMETRY ONLY
+networkx>=3.0
+
+# Phase 3: Time Warping
+# Used for timeline alignment (DTW) - GEOMETRY ONLY
+tslearn>=0.6.0
+scipy>=1.10.0

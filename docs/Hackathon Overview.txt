@@ -1,0 +1,107 @@
+﻿ET Gen AI Hackathon Overview
+
+1. Overview
+The ET Gen AI Hackathon, in partnership with Unstop, is a nation-scale innovation challenge aimed at identifying and celebrating India's emerging talent in Generative AI. The competition brings together students, professionals, and AI enthusiasts to solve real-world GenAI problems spanning business innovation, social impact, and open innovation.
+The hackathon follows a multi-phase journey:
+* Online GenAI assessment
+* Idea submission
+* Prototype and MVP development
+* Offline Grand Finale
+Participants receive expert mentorship, structured evaluations, and national visibility, with the objective of accelerating India's GenAI ecosystem and enabling participants to translate ideas into impactful AI solutions.
+
+2. Eligibility Criteria
+* Open to participants across India (students, professionals, AI enthusiasts).
+* Team size: 1 to 4 members.
+* Cross-college, cross-discipline, and mixed-background teams are allowed.
+* Each participant may join only one team.
+* Intended for innovators, designers, developers, and problem-solvers interested in building real GenAI solutions.
+
+3. Rules and Guidelines
+* Team formation must be completed within the registration window.
+* No changes to team members are allowed after the deadline.
+* All ideas, code, documents, and assets must be:
+o Original
+o Created during the hackathon
+* Plagiarism, pre-built projects, or unauthorised third-party material will result in immediate disqualification.
+* Use of open-source tools, libraries, and models is permitted.
+* Licensed tools or datasets may be used only with valid authorisation.
+* All decisions regarding eligibility, authenticity, and judgment rest with Unstop and The Economic Times.
+
+4. Judging Criteria
+Submissions will be evaluated based on:
+* Innovation & Creativity
+* Technical Implementation
+* Feasibility & Scalability
+* Relevance to the Problem Statement
+* Documentation & Presentation Quality
+
+5. Final Authority
+* Jury decisions are final and binding.
+* Organizers reserve the right to modify rules, guidelines, or timelines if required.
+
+6. Rewards & Prizes
+* Winner (Grand Finale): INR 5,00,000
+* First Runners-Up: INR 3,00,000
+* Second Runners-Up: INR 2,00,000
+Additional benefits:
+* PPIs, internships, and job opportunities with leading AI-first tech companies.
+* Certificate of Participation for all participants (issued by The Economic Times).
+* Certificate of Merit for top 3 teams per college.
+* National-level recognition for finalists and winners across ET platforms and media.
+* Networking opportunities with experts, founders, and AI practitioners.
+
+7. Stages and Timelines
+Phase 1: Online Qualifier - MCQ
+Duration:
+* 26 Dec 2025, 12:00 PM IST → 27 Jan 2026, 11:59 PM IST
+Details:
+* Participants attempt a GenAI-focused MCQ assessment.
+* Immediately after the assessment, participants submit an initial idea aligned with the problem themes.
+* Shortlisting is based on:
+o Assessment scores
+o Relevance and clarity of the idea
+Note:
+* This round can only be attempted on a desktop or laptop.
+
+Phase 1: Online Qualifier - Idea Submission
+Duration:
+* 26 Dec 2025, 01:20 PM IST → 01 Feb 2026, 11:59 PM IST
+Details:
+* Submission of the initial idea after completing the MCQ assessment.
+* Evaluation based on:
+o Clarity
+o Relevance
+o Potential of the idea
+* Used for shortlisting teams to the next stage.
+
+Phase 2: Prototype Submission
+Duration:
+* 07 Feb 2026, 06:00 PM IST → 15 Feb 2026, 11:59 PM IST
+Details:
+* Teams build a functional prototype.
+* Submission must include:
+o Architecture
+o Code
+o Demo video
+* Evaluation based on:
+o Innovation
+o Execution quality
+o Impact
+
+Phase 3: MVP Build Sprint
+Duration:
+* 23 Feb 2026, 12:00 PM IST → 04 Mar 2026, 06:00 PM IST
+Details:
+* Top 50 teams are shortlisted.
+* Teams refine ideas and develop a Minimum Viable Product (MVP).
+
+Phase 4: Grand Finale
+Date: To be announced
+Details:
+* Top 10 teams present their ideas and demonstrate prototypes before the Jury Panel.
+* Final winners are selected in this stage.
+
+8. Reference
+More details available at:
+https://economictimes.indiatimes.com/et-ai-hackathon
+

@@ -51,6 +51,7 @@ from ..contracts.events import (
     ThreadMembership, FragmentProcessingOutcome, ThreadProcessingResult,
     DuplicateStatus, ContradictionStatus, AuditLogEntry, AuditEventType
 )
+from .topology import TopologyEngine
 
 
 # =============================================================================
@@ -357,8 +358,10 @@ class NarrativeStateEngine:
         self._lifecycle_machine = LifecycleStateMachine()
         self._lifecycle_machine.ACTIVE_FRAGMENT_THRESHOLD = self._config.active_fragment_threshold
         self._lifecycle_machine.DORMANCY_SECONDS = self._config.dormancy_seconds
+        self._lifecycle_machine.DORMANCY_SECONDS = self._config.dormancy_seconds
         self._divergence_detector = DivergenceDetector()
         self._absence_detector = AbsenceDetector()
+        self._topology_engine = TopologyEngine()
         
         # Event log (internal, for replay support)
         self._event_log: List[NarrativeStateEvent] = []
@@ -475,6 +478,26 @@ class NarrativeStateEngine:
                     reason=divergence_reason
                 )
         
+
+        
+        # Check for structural divergence (Topology)
+        if self._config.enable_divergence_detection:
+            # Build temporary graph to check structure
+            # Note: In a real system, we might maintain the graph incrementally
+            # Here we rebuild it for safety and simplicity
+            new_relations_check = list(current_snapshot.relations)
+            
+            # Add implicit relations based on thread membership if needed, 
+            # but for now we rely on explicit relations.
+            # If we want to check if the NEW fragment causes a split, we need to add it 
+            # and its relations to the graph.
+            
+            # Since we don't know the new relations yet (they are built below),
+            # we can only check structural split AFTER building relations.
+            # However, handle_divergence expects to run BEFORE state update.
+            # Strategy: We will perform structural check AFTER building new relations candidate list.
+            pass
+
         # Build new relations
         new_relations = list(current_snapshot.relations)
         
@@ -489,6 +512,11 @@ class NarrativeStateEngine:
                     detected_at=Timestamp.now()
                 )
                 new_relations.append(relation)
+                
+        # Add explicit candidate relations (e.g. analyst supplied or entity links)
+        # This is the "Edge Supply Mechanism"
+        if fragment.candidate_relations:
+            new_relations.extend(fragment.candidate_relations)
         
         # Compute new lifecycle state
         new_fragment_count = len(current_snapshot.member_fragment_ids) + 1
@@ -498,6 +526,26 @@ class NarrativeStateEngine:
             last_activity=current_snapshot.last_activity_timestamp,
             current_time=Timestamp.now()
         )
+        
+        # TOPOLOGY CHECK: Structural Divergence
+        # Now that we have the candidate new relations, check if the graph splits
+        if self._config.enable_divergence_detection:
+            self._topology_engine.build_graph(
+                fragment_ids=current_snapshot.member_fragment_ids + (fragment.fragment_id,),
+                relations=tuple(new_relations)
+            )
+            structural_divergence = self._topology_engine.detect_structural_divergence(
+                known_thread_ids={thread_id.value}
+            )
+            
+            if structural_divergence:
+                # If we have more components than threads (which is 1), it's a split
+                return self._handle_divergence(
+                    thread_id=thread_id,
+                    current_snapshot=current_snapshot,
+                    fragment=fragment,
+                    reason=f"Structural divergence detected: Thread split into {len(structural_divergence)} components"
+                )
         
         # Merge topics
         all_topics = set(current_snapshot.canonical_topics) | set(fragment.canonical_topics)

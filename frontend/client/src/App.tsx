@@ -1,69 +1,143 @@
-import { useEffect, useState, useMemo } from 'react';
-import { StateAdapter } from '@/layers/state/adapter';
-import { NarrativeVersionDTO } from '@/layers/state/contracts';
-import { TimelineLayout, RenderableTimeline } from '@/layers/visualization/timeline';
-import { TimelineCanvas } from '@/components/TimelineCanvas';
-import { Scrubber } from '@/components/Scrubber';
-// import { useTimeStore } from '@/layers/interaction/store'; // Disabled for prototype
+import { useEffect, useMemo, useRef } from 'react';
+import { TimelineCanvas } from './visualization/TimelineCanvas';
+import { ForensicScrubber } from './components/Scrubber';
+import { useForensicStore, selectActiveFrame, selectActiveThreads } from './state/store';
+import { fetchLatestSnapshot, subscribeToStream } from './state/adapter';
 
-// Layout Configuration (Forensic Standards)
-const CONFIG = {
-    width: 1200,
-    trackHeight: 40,
-    trackGap: 10,
-    viewStart: new Date('2024-01-01T12:00:00Z'),
-    viewEnd: new Date('2024-01-02T12:00:00Z')
-};
-
+/**
+ * Narrative Oscilloscope App
+ * ==========================
+ * 
+ * ARCHITECTURE:
+ * - State: ForensicStore (Zustand)
+ * - Data: Backend API via adapter.ts
+ * - Viz: D3 TimelineCanvas
+ * - Control: ForensicScrubber
+ */
 function App() {
-    const [version, setVersion] = useState<NarrativeVersionDTO | null>(null);
-    // const { viewStart, viewEnd } = useTimeStore(); // Disabled for prototype
+    const appendSnapshot = useForensicStore(s => s.appendSnapshot);
+    const setConnectionStatus = useForensicStore(s => s.setConnectionStatus);
+    const connectionStatus = useForensicStore(s => s.connectionStatus);
+    const activeFrame = useForensicStore(selectActiveFrame);
+    const activeThreads = useForensicStore(selectActiveThreads);
 
-    // 1. Fetch Data (State Layer)
+    const unsubRef = useRef<(() => void) | null>(null);
+
+    // === INITIAL FETCH ===
     useEffect(() => {
-        async function load() {
-            const v = await StateAdapter.getLatestVersion();
-            setVersion(v);
+        setConnectionStatus('connecting');
+
+        fetchLatestSnapshot()
+            .then(snapshot => {
+                appendSnapshot(snapshot);
+                setConnectionStatus('connected');
+            })
+            .catch(err => {
+                console.error('[App] Initial fetch failed:', err);
+                setConnectionStatus('error', err.message);
+            });
+
+        // Cleanup
+        return () => {
+            if (unsubRef.current) {
+                unsubRef.current();
+            }
+        };
+    }, [appendSnapshot, setConnectionStatus]);
+
+    // === SSE SUBSCRIPTION (after initial connection) ===
+    useEffect(() => {
+        if (connectionStatus !== 'connected') return;
+
+        unsubRef.current = subscribeToStream(
+            (snapshot) => {
+                appendSnapshot(snapshot);
+            },
+            (err) => {
+                console.error('[App] SSE error:', err);
+                setConnectionStatus('error', err.message);
+            }
+        );
+
+        return () => {
+            if (unsubRef.current) {
+                unsubRef.current();
+                unsubRef.current = null;
+            }
+        };
+    }, [connectionStatus, appendSnapshot, setConnectionStatus]);
+
+    // === DERIVED TIME DOMAIN ===
+    const { domainStart, domainEnd } = useMemo(() => {
+        if (!activeFrame || activeThreads.length === 0) {
+            return {
+                domainStart: new Date(),
+                domainEnd: new Date(Date.now() + 3600000)
+            };
         }
-        load();
-    }, []);
 
-    // 2. Calculate Layout (Visualization Layer)
-    // Note: Using CONFIG values for prototype. In production, these would come from store.
-    const layout: RenderableTimeline | null = useMemo(() => {
-        if (!version) return null;
-        return TimelineLayout.calculate(version, CONFIG);
-    }, [version]);
+        let min = Infinity;
+        let max = -Infinity;
 
-    // 3. Render (Presentation Layer)
+        for (const thread of activeThreads) {
+            const start = new Date(thread.start_time).getTime();
+            const end = new Date(thread.end_time).getTime();
+            if (start < min) min = start;
+            if (end > max) max = end;
+        }
+
+        // Add 10% padding
+        const range = max - min;
+        const padding = range * 0.1;
+
+        return {
+            domainStart: new Date(min - padding),
+            domainEnd: new Date(max + padding)
+        };
+    }, [activeFrame, activeThreads]);
+
     return (
         <div className="flex flex-col h-screen bg-bg-primary text-text-primary overflow-hidden">
-
             {/* Header */}
-            <header className="h-12 border-b border-border-subtle flex items-center px-4 bg-bg-secondary">
+            <header className="h-12 border-b border-border-subtle flex items-center justify-between px-4 bg-bg-secondary">
                 <h1 className="font-mono text-sm tracking-widest text-text-muted uppercase">
-                    Narrative Intelligence Engine <span className="text-state-active">v0.1.0</span>
+                    Narrative Oscilloscope <span className="text-state-active">v0.2.0</span>
                 </h1>
-                <div className="ml-auto flex gap-4 text-xs text-text-disabled font-mono">
-                    {version && <span>VER: {version.version_id}</span>}
-                    <span>FORENSIC MODE: ACTIVE</span>
+
+                {/* Connection Status */}
+                <div className="flex items-center gap-2">
+                    <span className={`w-2 h-2 rounded-full ${connectionStatus === 'connected' ? 'bg-green-500' :
+                        connectionStatus === 'connecting' ? 'bg-yellow-500 animate-pulse' :
+                            connectionStatus === 'error' ? 'bg-red-500' :
+                                'bg-gray-500'
+                        }`} />
+                    <span className="font-mono text-xs text-text-muted uppercase">
+                        {connectionStatus}
+                    </span>
                 </div>
             </header>
 
-            {/* Main Visualization */}
-            <main className="flex-1 relative overflow-hidden flex items-center justify-center p-8">
-                <div className="w-full max-w-[1200px] aspect-[16/9] border border-border-strong bg-bg-secondary relative shadow-2xl">
-                    {layout ? (
-                        <TimelineCanvas layout={layout} height={600} />
-                    ) : (
-                        <div className="flex items-center justify-center h-full text-text-muted">Loading Evidence...</div>
-                    )}
-                </div>
+            {/* Visualization */}
+            <main className="flex-1 w-full h-full relative overflow-hidden">
+                {activeThreads.length > 0 ? (
+                    <TimelineCanvas
+                        threads={activeThreads}
+                        width={1200}
+                        height={600}
+                        domainStart={domainStart}
+                        domainEnd={domainEnd}
+                    />
+                ) : (
+                    <div className="flex items-center justify-center h-full text-text-muted font-mono text-sm">
+                        {connectionStatus === 'connecting' ? 'Connecting to backend...' :
+                            connectionStatus === 'error' ? 'Connection failed. Check backend.' :
+                                'No data available.'}
+                    </div>
+                )}
             </main>
 
-            {/* Controls */}
-            <Scrubber />
-
+            {/* Scrubber */}
+            <ForensicScrubber />
         </div>
     );
 }

@@ -21,6 +21,33 @@ import hashlib
 
 
 # =============================================================================
+# SOURCE TIER CLASSIFICATION (Metadata only - NO interpretive weighting)
+# =============================================================================
+
+class SourceTier(Enum):
+    """
+    Source tier classification - METADATA ONLY.
+    
+    CRITICAL: This is classification metadata for filtering and tracing.
+    It MUST NOT affect:
+    - Normalization behavior
+    - Thread grouping logic
+    - Divergence detection
+    - Any downstream processing
+    - Ranking or scoring
+    
+    The tier is simply a label indicating the origin type.
+    """
+    MOCK = "mock"                    # Synthetic test/demo data
+    PUBLIC_RSS = "public_rss"        # Live public RSS feeds
+    SHADOW_RSS = "shadow_rss"        # Shadow mode ingestion (no canonical state)
+    # Future tiers (not yet used):
+    # WIRE = "wire"                  # News wires (AP, Reuters, etc.)
+    # OFFICIAL = "official"          # Government/official sources
+    # SOCIAL = "social"              # Social media sources
+
+
+# =============================================================================
 # ERROR STATES (Explicit, never silent)
 # =============================================================================
 
@@ -211,7 +238,7 @@ class TimeRange:
     end: Timestamp
     
     def __post_init__(self):
-        if self.start.value > self.end.value:
+        if self.start and self.end and self.start.value > self.end.value:
             raise ValueError("TimeRange start must be before or equal to end")
     
     def contains(self, timestamp: Timestamp) -> bool:

@@ -1,0 +1,1 @@
+{"session_id": "sess_cbdfed797cc687a9", "started_at": "2026-01-26T09:30:26.005175+00:00", "completed_at": "2026-01-26T09:30:31.313228+00:00", "mock_adapter_type": "mock", "live_adapter_type": "live_rss", "stats": {"mock_event_count": 0, "live_event_count": 0, "mock_source_count": 0, "live_source_count": 5, "total_bytes_ingested": 0, "session_duration_ms": 5308.053016662598}}

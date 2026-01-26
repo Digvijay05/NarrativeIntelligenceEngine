@@ -1,106 +1,86 @@
 # Narrative Intelligence Engine
 
-**A Forensic Instrument for Narrative Analysis**
+**A Constitutionally-Bound Structural Proof System**
 
-> *Reconstruct coherent narratives from fragmented public information without inferring truth or resolving ambiguity.*
+> *To distinguish 'Narrative' from 'Noise' not by inference, but by structural falsification.*
 
-## Overview
+## 🚨 Constitutional Status: LOCKED
 
-The Narrative Intelligence Engine is an event-sourced system designed to ingest, normalize, and visualize conflicting narratives as they evolve over time. Unlike news aggregators or sentiment dashboards, it treats narrative evolution as a **temporal signals processing problem**.
+This system is no longer an exploratory prototype. It is a **verified instrument** operating under a strict "Falsifier Constitution".
 
-**Key Principles:**
-*   **No Interpretation**: The system does not rank "importance" or predict "truth".
-*   **Forensic Rigor**: Every visualized state is traceable to a raw, immutable evidence fragment.
-*   **First-Class Absence**: Silence, gaps, and disappearance are treated as signals, not missing data.
-*   **Contradiction**: Parallel, mutually exclusive narratives are visualized side-by-side.
+**The Core Theorem:**
+> *Narrative emergence is neither semantic nor temporal; it is a function of explicit edge density under trusted constraints.*
 
----
+> *Note: The absence of a narrative is a result, not a failure.*
 
-## 🏗 System Architecture
-
-The system operates on a strict 6-layer Backend and 4-layer Frontend architecture.
-
-### Backend (Python)
-An event-sourced engine that processes raw feeds into narrative threads.
-
-1.  **Ingestion Layer**: Fetches data (RSS/Atom) and stores *raw bytes* before parsing.
-2.  **Normalization Layer**: Extracts entities into standard `EvidenceFragment` format.
-3.  **Core Engine**: A deterministic state machine that evolves `NarrativeThread` entities.
-4.  **Storage Layer**: Temporal storage preserving all history.
-5.  **Adapter Layer**: Interfaces with ML models for "Divergence Scoring" (Overlay pattern).
-6.  **Contract Layer**: Defines immutable DTOs for the frontend.
-
-### Frontend (React + Vite + Tailwind)
-A "Narrative Oscilloscope" web interface.
-
-1.  **State Layer**: Read-only access to backend DTOs.
-2.  **Visualization Layer**: Pure, deterministic D3.js layouts (Same Input → Same Pixels).
-3.  **Interaction Layer**: Temporal control (Zustand) for scrubbing and replay.
-4.  **Presentation Layer**: Stateless, "Forensic Palette" UI components.
+The engine does not "discover" stories. It **rejects** any set of data that fails to meet minimum structural connectivity requirements. It prioritizes **Type I Error Avoidance** (refusing to ratify a false narrative) above all else.
 
 ---
 
-## 🚀 Getting Started
+## 📂 Validation Artifacts (The "Proof of Work")
 
-### Prerequisites
-*   **Python 3.11+**
-*   **Node.js 18+** & `npm`
+The system's behavior has been characterized via rigorous stress-testing.
 
-### 1. Backend Setup
-The backend runs the ingestion and analysis pipeline.
+1.  [**Taxonomy Report**](file:///c:/Users/ROG Strix/.gemini/antigravity/brain/fe0c3552-1cfa-4b2b-88c7-d5d9b18848d8/taxonomy_report.md)
+    *   *Finding*: The "Binary Stability" of narrative graphs.
+    *   *Result*: Narratives do not degrade gracefully; they collapse instantly if edge density falls below $N-1$.
 
+2.  [**Fragility Report**](file:///c:/Users/ROG Strix/Desktop/PROJECTS/ET Hackathon/et_hackathon_project/demo_artifacts/fragility_report.md)
+    *   *Finding*: The "Glass Bridge" Phenomenon.
+    *   *Result*: Visualization of the "Load-Bearing" nature of every single edge in a sequential narrative.
+
+3.  [**Walkthrough**](file:///c:/Users/ROG Strix/.gemini/antigravity/brain/fe0c3552-1cfa-4b2b-88c7-d5d9b18848d8/walkthrough.md)
+    *   *Finding*: The success of "Edge Injection".
+    *   *Result*: How explicit trust signals (e.g., specific sequential links) override forensic suspicion.
+
+---
+
+## 🛠 System Modes
+
+The engine operates in two discrete modes, enforced by the `StateMachine`:
+
+| Mode | Behavior | Epistemic Stance |
+| :--- | :--- | :--- |
+| **Strict Mode** (Default) | Rejects all inferred connections. Returns "Cloud" (disconnected points) unless edges are explicit. | *Refusal to Hallucinate* |
+| **Trusted Mode** | Accepts explicit provenance edges (Hyperlinks, Analyst Sequence). Verifies connectivity. | *verification of Supplied Structure* |
+
+**Forbidden Actions (Constitutionally Banned):**
+*   ❌ Semantic Edge Inference (Embedding-based connection)
+*   ❌ Narrative Auto-Completion / Repair
+*   ❌ "Likelihood" Scoring
+*   ❌ Hidden Smoothing of Gaps
+
+---
+
+## 🚀 Running the Instrument
+
+### 1. The Full Pipeline (Edge Injection Experiment) - Phase 4 Runner
+Run the experiment battery that characterizes the failure envelopes.
 ```bash
-# Data ingestion & Processing Demo
-python end_to_end_demo.py
+python demo/run_phase4_experiments.py
 ```
-*This script runs a full cycle: Mock RSS fetch → Ingestion → Thread Creation → Analysis → DTO Generation.*
 
-### 2. Frontend Setup
-The frontend provides the interactive visualization.
-
+### 2. The Visualization (Glass Bridge) - Phase 5 Runner
+Generate the structural fragility diagrams.
 ```bash
-cd et_hackathon_project/frontend/client
-npm install
-npm run dev
+python demo/run_fault_visualization.py
 ```
-Access the UI at `http://localhost:5173`.
+*Output: `demo_artifacts/fragility_report.md`*
 
 ---
 
-## 🧪 Verification & Status
+## 🏗 Architecture (The "Verifier" Pattern)
 
-The system is currently in **Functional Prototype** status.
-
-*   **Chaos Tests**: `43/43 PASSED`. The engine is resilient against out-of-order events, future timestamps, and adversarial flooding.
-*   **Integration**: End-to-end pipeline verified from RSS to DTO.
-*   **UI Status**: Visualization layer implements strict deterministic timeline rendering.
-
-### Capabilities (Current)
-*   ✅ Ingest RSS feeds (tiered source quality).
-*   ✅ Detect and track disjoint narrative threads.
-*   ✅ Identify contradictions (via Mock Adapter).
-*   ✅ Visualize silence and dormancy.
+*   **Ingestion**: Raw, immutable feed capture.
+*   **Normalization**: Extraction of "Evidence Fragments".
+*   **Edge Admission Gate**: **The Critical Gatekeeper.** Only verifiable edges enter here.
+*   **Core Engine**: Deterministic State Machine. Replays events. Fails if structure is broken.
+*   **Topology Visualizer**: Pure analytical layer. Renders the graph without "fixing" it.
 
 ---
 
-## 📂 Project Structure
+## Conclusion
 
-```
-├── backend/            # Core Python Engine
-├── frontend/
-│   ├── client/         # React Application
-<!-- │   ├── state/          # Python DTO Contracts -->
-│   ├── visualization/  # Python Visualization Contracts
-│   └── interaction/    # Interaction Contracts
-├── ingestion/          # Data Fetching & Parsing
-├── models/             # Domain Entities
-└── tests/              # Verification & Chaos Suites
-```
+This project is a rejection of "Generative Narrative". It is a **Narrative Detector**.
 
----
-
-## Developer Notes
-
-*   **Immutability**: Ensure all DTOs remain frozen.
-*   **Time Travel**: The frontend supports arbitrary historical replay.
-*   **Zero Inference**: Do not add summary features or "AI insight" bubbles. The user is the analyst; the machine is the lens.
+It proves that for forensic purposes, a "story" is not a soft concept; it is a hard structural property that can be mathematically verified—or falsified.
