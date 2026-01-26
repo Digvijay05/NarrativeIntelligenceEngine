@@ -38,7 +38,13 @@ env/
 Thumbs.db
 
 # Project specific
-data/
+# Ignore all data by default
+data/**
+
+# --- Shadow Mode Exception ---
+# Allow forensic shadow ledger to be committed
+!data/shadow/
+!data/shadow/events.jsonl
 *.db
 *.sqlite
 *.sqlite3
@@ -64,3 +70,6 @@ htmlcov/
 # Environment variables
 .env
 .env.local
+
+
+.hypothesis
