@@ -25,7 +25,7 @@ The system's behavior has been characterized via rigorous stress-testing.
     *   *Finding*: The "Binary Stability" of narrative graphs.
     *   *Result*: Narratives do not degrade gracefully; they collapse instantly if edge density falls below $N-1$.
 
-2.  [**Fragility Report**](file:///c:/Users/ROG Strix/Desktop/PROJECTS/ET Hackathon/et_hackathon_project/demo_artifacts/fragility_report.md)
+2.  [**Fragility Report**](et_hackathon_project/demo_artifacts/fragility_report.md)
     *   *Finding*: The "Glass Bridge" Phenomenon.
     *   *Result*: Visualization of the "Load-Bearing" nature of every single edge in a sequential narrative.
 
