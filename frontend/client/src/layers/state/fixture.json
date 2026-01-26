@@ -1,0 +1,70 @@
+{
+    "version_id": "v1.0.0-verified",
+    "generated_at": "2024-01-01T12:00:00Z",
+    "threads": [
+        {
+            "thread_id": "thread_main_1",
+            "segments": [
+                {
+                    "segment_id": "seg_1_1",
+                    "thread_id": "thread_main_1",
+                    "kind": "presence",
+                    "start_time": "2024-01-01T12:00:00Z",
+                    "end_time": "2024-01-01T14:00:00Z",
+                    "state": "active",
+                    "fragment_ids": [
+                        "frag_1",
+                        "frag_2"
+                    ]
+                },
+                {
+                    "segment_id": "seg_1_2",
+                    "thread_id": "thread_main_1",
+                    "kind": "presence",
+                    "start_time": "2024-01-01T14:00:00Z",
+                    "end_time": "2024-01-02T12:00:00Z",
+                    "state": "active",
+                    "fragment_ids": [
+                        "frag_3"
+                    ]
+                }
+            ]
+        },
+        {
+            "thread_id": "thread_counter_1",
+            "segments": [
+                {
+                    "segment_id": "seg_2_1",
+                    "thread_id": "thread_counter_1",
+                    "kind": "presence",
+                    "start_time": "2024-01-01T13:00:00Z",
+                    "end_time": "2024-01-01T15:00:00Z",
+                    "state": "active",
+                    "fragment_ids": [
+                        "frag_4"
+                    ]
+                },
+                {
+                    "segment_id": "seg_2_silence",
+                    "thread_id": "thread_counter_1",
+                    "kind": "absence",
+                    "start_time": "2024-01-01T15:00:00Z",
+                    "end_time": "2024-01-01T20:00:00Z",
+                    "state": "dormant",
+                    "fragment_ids": []
+                },
+                {
+                    "segment_id": "seg_2_2",
+                    "thread_id": "thread_counter_1",
+                    "kind": "presence",
+                    "start_time": "2024-01-01T20:00:00Z",
+                    "end_time": "2024-01-02T12:00:00Z",
+                    "state": "divergent",
+                    "fragment_ids": [
+                        "frag_5"
+                    ]
+                }
+            ]
+        }
+    ]
+}

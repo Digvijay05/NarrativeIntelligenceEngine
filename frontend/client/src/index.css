@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: theme('colors.bg.primary');
+  color: theme('colors.text.primary');
+}
+
+/* Scrollbar Styling for Forensic Feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.bg.secondary');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.border.subtle');
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.border.strong');
+}
