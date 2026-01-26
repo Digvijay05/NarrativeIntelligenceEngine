@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\backend\query\__init__.py
+# hypothesis_version: 6.150.3
+
+[30.0, 100, 1000, 'activity_count', 'at_time', 'canonical_topics', 'comparison', 'content_signature', 'contradiction_info', 'duplicate_info', 'execution_time_ms', 'fragment', 'query', 'query_executed', 'query_type', 'result_count', 'rewind', 'snapshot', 'source_event_id', 'state', 'success', 'thread_id', 'timeline', 'trace']

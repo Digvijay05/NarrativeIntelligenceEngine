@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\backend\ingestion\extractor.py
+# hypothesis_version: 6.150.3
+
+['channel', 'description', 'feed', 'guid', 'href', 'item', 'link', 'pubDate', 'rss', 'title']

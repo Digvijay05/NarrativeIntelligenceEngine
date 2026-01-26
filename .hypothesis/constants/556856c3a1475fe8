@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\frontend\mapper.py
+# hypothesis_version: 6.150.3
+
+[0.1, 0.3, 0.7, 0.95, 1.0, 1000, 'active', 'concluded', 'confidence', 'dormant', 'emerging', 'fetched', 'high', 'label', 'low', 'lower', 'medium', 'merged', 'published', 'score_type', 'second', 'type', 'upper', 'value']

@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\adapter\providers\base.py
+# hypothesis_version: 6.150.3
+
+[0.0, 1.0, 30.0, 4096, 'api_error', 'content_filtered', 'invalid_response', 'network_error', 'rate_limited', 'seed_not_supported', 'timeout']

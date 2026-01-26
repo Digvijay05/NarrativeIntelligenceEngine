@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\backend\ingestion\__init__.py
+# hypothesis_version: 6.150.3
+
+[1.0, 100, './data/capsules', 'adapter_not_found', 'batch', 'capsule_id', 'csv_file', 'error', 'event', 'event_count', 'guid', 'in_memory', 'ingestion', 'ingestion_completed', 'json_file', 'link', 'published', 'r', 'rss', 'source_id', 'source_type', 'summary', 'timestamp', 'title', 'unknown', 'utf-8']

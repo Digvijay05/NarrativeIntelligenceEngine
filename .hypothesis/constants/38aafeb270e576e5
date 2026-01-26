@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\backend\contracts\spec.py
+# hypothesis_version: 6.150.3
+
+['absence', 'active', 'divergent', 'dormant', 'presence', 'terminated']

@@ -157,7 +157,7 @@ class TestFrontendUnchanged:
         # Frontend DTOs must not grow new fields
         # No "volume_score" or "source_dominance" fields
         
-        from frontend.dtos import NarrativeThreadDTO, EvidenceFragmentDTO
+        from backend.contracts.spec import NarrativeThreadDTO, FragmentDTO as EvidenceFragmentDTO
         from dataclasses import fields
         
         # Check no volume-related fields

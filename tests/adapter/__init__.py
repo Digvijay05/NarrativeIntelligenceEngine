@@ -1,0 +1,1 @@
+"""Test adapter package."""

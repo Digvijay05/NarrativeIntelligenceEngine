@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\backend\observability\__init__.py
+# hypothesis_version: 6.150.3
+
+[720, 'avg', 'by_event_type', 'by_layer', 'contradiction_count', 'core', 'count', 'counter', 'details', 'end', 'engine', 'gauge', 'generated_at', 'histogram', 'ingestion', 'log_counts', 'max', 'min', 'normalization', 'observability', 'outcome', 'query', 'query_type', 'source_type', 'start', 'storage', 'success', 'sum', 'thread_churn_rate', 'threads_active', 'time_range', 'timestamp', 'timing', 'total_entries']

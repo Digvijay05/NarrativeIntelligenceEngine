@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\frontend\state\core.py
+# hypothesis_version: 6.150.3
+
+['DTOVersion', 'active', 'backend_ranked', 'chronological', 'concluded', 'continuous', 'dormant', 'emerging', 'expected', 'explicit_gap', 'insertion_order', 'merged', 'missing', 'never_existed', 'none', 'parallel', 'present', 'publication_gap', 'redacted', 'redaction', 'source_disagreement', 'timeline_fork', 'unexpected', 'unknown', 'unknown_gap', 'unordered', 'v1', 'version_conflict']

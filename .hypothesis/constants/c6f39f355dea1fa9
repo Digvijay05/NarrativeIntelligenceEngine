@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\adapter\providers\local.py
+# hypothesis_version: 6.150.3
+
+[0.0, 0.1, 0.15, 0.3, 0.5, 1.0, 1000, '1', 'HF_DATASETS_OFFLINE', 'TRANSFORMERS_OFFLINE', 'all-MiniLM-L6-v2', 'analysis_type', 'annotations', 'coherence', 'connection', 'cpu', 'device', 'divergence_risk', 'embedding_based', 'local', 'model_hash', 'model_name', 'name', 'offline', 'provider', 'scores', 'seed_used', 'uncertainty', 'value']

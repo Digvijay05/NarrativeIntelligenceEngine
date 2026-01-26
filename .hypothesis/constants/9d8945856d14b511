@@ -1,0 +1,4 @@
+# file: C:\Users\ROG Strix\Desktop\PROJECTS\ET Hackathon\et_hackathon_project\adapter\llm_executor.py
+# hypothesis_version: 6.150.3
+
+[0.0, 0.1, 0.5, 0.8, 0.9, 1.0, 30.0, 1000, 4096, 'Provider error', 'assessed_state', 'between_fragments', 'claim_a', 'claim_b', 'coherence_analysis', 'coherence_score', 'confidence', 'contradiction', 'contradictions', 'description', 'divergence_risk', 'divergence_scoring', 'evidence', 'evidence_fragments', 'fragment_a', 'fragment_b', 'fragment_pair', 'gaps', 'indicators', 'lifecycle_prediction', 'lifecycle_state', 'max_tokens', 'name', 'scores', 'severity', 'state_probabilities', 'temperature', 'temporal_coherence', 'thread', 'timeout_seconds', 'uncertainty', 'unknown', 'value']

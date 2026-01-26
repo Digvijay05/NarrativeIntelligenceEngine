@@ -15,15 +15,15 @@ import pytest
 from dataclasses import fields, FrozenInstanceError
 from datetime import datetime
 
-from frontend.dtos import (
+from frontend.state import (
     DTOVersion, AvailabilityState, ContinuityState, LifecycleState,
     NarrativeThreadDTO, TimelineSegmentDTO, EvidenceFragmentDTO,
     ModelOverlayRefDTO,
 )
-from frontend.dtos.thread import TemporalBoundsDTO, PresenceMarkerDTO
-from frontend.dtos.segment import TimeWindowDTO
-from frontend.dtos.fragment import TimestampDTO
-from frontend.dtos.envelope import ResponseEnvelope, QueryMetadataDTO
+from frontend.state.thread import TemporalBoundsDTO, PresenceMarkerDTO
+from frontend.state.segment import TimeWindowDTO
+from frontend.state.fragment import TimestampDTO
+from frontend.state.envelope import ResponseEnvelope, QueryMetadataDTO
 from frontend.mapper import DTOMapper
 
 
