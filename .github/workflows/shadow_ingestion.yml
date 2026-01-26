@@ -1,0 +1,37 @@
+name: Shadow Ingestion (Forensic)
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # Run every 10 minutes
+  workflow_dispatch:        # Allow manual trigger
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # Allow pushing back to repo
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install Dependencies
+      run: |
+        pip install httpx
+
+    - name: Run Shadow Ingestion (Single Tick)
+      run: |
+        python -m backend.shadow.rss.run_shadow_ingestion --single-tick
+
+    - name: Commit and Push Ledger
+      run: |
+        git config --global user.name 'Shadow Ingestion Bot'
+        git config --global user.email 'bot@shadow.local'
+        git add data/shadow/events.jsonl
+        # Only commit if there are changes
+        git diff --quiet && git diff --staged --quiet || (git commit -m "shadow: ingest tick" && git push)
